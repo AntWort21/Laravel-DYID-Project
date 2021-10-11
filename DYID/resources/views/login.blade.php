@@ -11,7 +11,7 @@
     @extends('layouts/headerFooter')
     @section('content')
         <div class="content">
-            <div class="register-content-box">
+            <div class="login-content-box">
                 <div class="welcome-back-msg">
                     <h1>Welcome Back</h1>    
                 </div>

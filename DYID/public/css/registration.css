@@ -16,13 +16,6 @@ body{
     
 }
 
-table, th, td{
-    /* border: solid black 1px; */
-    /* width: 1000px; */
-    text-align: center;
-    border-collapse: collapse;
-}
-
 .join-msg{
     margin: 10px;
 }
