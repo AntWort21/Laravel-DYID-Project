@@ -12,14 +12,11 @@
         <div class="header">
             <div class="header-upper">
                 <div class="logo">
-                    <img src="{{ asset('storage/DYID.JPG') }}" alt="" class="logo-size" width="100px">
+                    <img src="{{ asset('storage/DYIDtrans.png') }}" alt="" class="logo-size" width="100px">
                 </div>
                 <div class="search-section">
                     <input type="text" name="search" placeholder="Search Product..." class="search-bar">
-
-                </div>
-                <div class="search-button">
-                    <img src="{{ asset('storage/SearchBtn.JPG') }}" alt="" class="logo-size" width="20px">
+                    <img src="{{ asset('storage/SearchBtnTrans.png') }}" alt="" class="logo-size" width="20px">
                 </div>
             </div>
             <div class="header-lower">
