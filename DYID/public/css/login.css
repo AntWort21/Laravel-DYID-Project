@@ -1,0 +1,52 @@
+/* -----------REGISTRATION--------------- */
+body{
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.register-content-box{
+    background-color: whitesmoke;
+    width: 750px;
+    
+}
+
+.welcome-back-msg{
+    margin: 10px;
+}
+
+#email{
+    width: 700px;
+    height: 50px;
+    margin: 10px;
+}
+
+#password{
+    width: 700px;
+    height: 50px;
+    margin: 10px;
+}
+
+.submit-reset{
+    display: flex;
+    justify-content: right;
+    text-align: center;
+}
+
+.loginBtn{
+    text-decoration: none;
+    color: black;
+    background-color: orange;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* .registerBtn:visited{
+    color: black;
+} */

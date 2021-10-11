@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/headerfooter.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -42,10 +42,14 @@
                 </div>
                 <div class="header-buttons">
                     <div class="login">
-                        Login
+                        <a href="login">
+                            Login
+                        </a>
                     </div>
                     <div class="register">
-                        Register
+                        <a href="register">
+                            Register
+                        </a>
                     </div>
                 </div>
             </div>
@@ -70,7 +74,7 @@
 
             <div class="footer-note">
                 <div class="copyright">
-                    2021 Copyright DY.ID
+                    &copy 2021 Copyright DY.ID
                 </div>
             </div>
         </div>
