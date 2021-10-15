@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/register', [UserController::class, 'register']);
-// Route::get('/login', [UserController::class, 'login']);
+Route::get('/register', [MemberController::class, 'viewRegister']);
+Route::get('/login', [MemberController::class, 'login']);
+Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
 
-Route::get('/login', [UserController::class, 'login']);
+
 
 Route::get('/', function () {
     return view('welcome');

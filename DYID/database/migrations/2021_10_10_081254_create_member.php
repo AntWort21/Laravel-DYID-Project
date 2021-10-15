@@ -16,11 +16,11 @@ class CreateMember extends Migration
         Schema::create('member', function (Blueprint $table) {
             $table->increments('memberId');
             $table->string('memberName');
-            $table->integer('genderId');
+            $table->integer('genderId'); $table->foreign('genderId')->references('genderId')->on('gender')->onUpdate('cascade')->onDelete('cascade');
             $table->string('memberAddress');
             $table->string('memberEmail');
             $table->string('memberPass');
-            $table->integer('roleId');
+            $table->integer('roleId'); $table->foreign('roleId')->references('roleId')->on('role')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

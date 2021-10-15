@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
 
-class UserController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +21,7 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function register(){
+    public function viewRegister(){
         return view('register');
     }
 
