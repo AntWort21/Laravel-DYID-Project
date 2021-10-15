@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Member;
 
-class MemberController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +13,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    public function login(){
         return view('login');
-    }
-
-    public function viewRegister(){
-        return view('register');
     }
 
     /**

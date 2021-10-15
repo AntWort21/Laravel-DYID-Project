@@ -14,13 +14,13 @@ class memberSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('member')->insert([
-            'memberName' => 'Admin',
-            'genderId' => '1',
-            'memberAddress' => 'admin street',
-            'memberEmail' => 'admin@gmail.com',
-            'memberPass' => 'admin',
-            'roleId' => '1'
-        ]);
+        // DB::table('member')->insert([
+        //     'memberName' => 'Admin',
+        //     'genderId' => '1',
+        //     'memberAddress' => 'admin street',
+        //     'memberEmail' => 'admin@gmail.com',
+        //     'memberPass' => 'admin',
+        //     'roleId' => '1'
+        // ]);
     }
 }

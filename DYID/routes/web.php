@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,10 @@ use App\Http\Controllers\MemberController;
 |
 */
 
-Route::get('/register', [MemberController::class, 'viewRegister']);
-Route::get('/login', [MemberController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/insertion', [RegisterController::class, 'insert']);
+// Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
 
 

@@ -16,13 +16,15 @@ class CreateMember extends Migration
         Schema::create('member', function (Blueprint $table) {
             $table->id('memberId');
             $table->string('memberName');
-            $table->unsignedBigInteger('genderId');
-            $table->foreign('genderId')->references('genderId')->on('gender')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('gender');
+            // $table->unsignedBigInteger('genderId');
+            // $table->foreign('genderId')->references('genderId')->on('gender')->onUpdate('cascade')->onDelete('cascade');
             $table->string('memberAddress');
             $table->string('memberEmail');
-            $table->string('memberPass');
-            $table->unsignedBigInteger('roleId');
-            $table->foreign('roleId')->references('roleId')->on('role')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('memberPassword');
+            // $table->string('roleName');
+            // $table->unsignedBigInteger('roleId');
+            // $table->foreign('roleId')->references('roleId')->on('role')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

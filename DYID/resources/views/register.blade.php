@@ -15,8 +15,10 @@
                 <div class="join-msg">
                     <h2>Join With Us</h2>    
                 </div>
+                <form action="/insertion" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="full-name">
-                        <input type="text" name="nama" id="name" placeholder="Full Name" class="name">
+                        <input type="text" name="name" id="name" placeholder="Full Name" class="name">
                     </div>
                     <div class="gender">
                         <h3>Gender</h3>
@@ -24,28 +26,27 @@
                         <label for="female"><input type="radio" name="gender" id="female" value="Female">Female</label>
                     </div>
                     <div class="address">
-                        <input type="text" name="nama" id="address" placeholder="Address">
+                        <input type="text" name="address" id="address" placeholder="Address">
                     </div>
                     <div class="email">
-                        <input type="text" name="nama" id="email" placeholder="Email">
+                        <input type="text" name="email" id="email" placeholder="Email">
                     </div>
                     <div class="password">
-                        <input type="password" name="nama" id="password" placeholder="Password">
+                        <input type="password" name="password" id="password" placeholder="Password">
                     </div>
                     <div class="confirm-password">
-                        <input type="password" name="nama" id="confirm-password" placeholder="Confirm Password">
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
                     </div>
                     <div class="terms-and-services">
                         <input type="checkbox" name="checkbox" id="checkbox">
                         <label for="terms-and-service">I agree with the terms and conditions</label>
                     </div>
                     <div class="submit-reset">
-                        <a href="">
-                            <div class="registerBtn">
-                                Register Now
-                            </div>
-                        </a>
+                        {{-- <div class="registerBtn" > --}}
+                        <input type="submit" class="registerBtn" value="Register Now">
+                        {{-- </div> --}}
                     </div>
+                </form>
             </div>
         </div>
     @endsection

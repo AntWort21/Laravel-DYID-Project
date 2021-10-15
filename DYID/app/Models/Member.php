@@ -8,16 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
+    public $table = "member";
 
-    //which one is the foreign key?
-    protected $attribute = [
-        'memberName',
-        'genderId',
-        'memberAddress',
-        'memberEmail',
-        'memberPass',
-        'roleId'
-    ];
+    // protected $fillable = [
+    //     'memberName',
+    //     'genderId',
+    //     'memberAddress',
+    //     'memberEmail',
+    //     'memberPass',
+    //     'roleId'
+    // ];
+
+    // public function role(){
+    //     return $this->belongsTo(Role::class);
+    // }
+
+    // public function gender(){
+    //     return $this->belongsTo(Gender::class);
+    // }
 
     // $table->increments('memberId');
     //         $table->string('memberName');
