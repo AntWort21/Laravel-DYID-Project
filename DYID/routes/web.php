@@ -16,7 +16,7 @@ use App\Http\Controllers\MemberController;
 
 Route::get('/register', [MemberController::class, 'viewRegister']);
 Route::get('/login', [MemberController::class, 'login']);
-Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
+// Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
 
 
 

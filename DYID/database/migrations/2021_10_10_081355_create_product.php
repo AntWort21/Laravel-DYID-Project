@@ -19,7 +19,7 @@ class CreateProduct extends Migration
             $table->string('productDescription');
             $table->integer('productPrice');
             $table->string('productImage');
-            $table->integer('categoryId');
+            $table->integer('categoryId'); $table->foreign('categoryId')->references('categoryId')->on('category')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

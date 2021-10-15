@@ -15,8 +15,6 @@
                 <div class="join-msg">
                     <h2>Join With Us</h2>    
                 </div>
-                <form action="post" action="{{ route('registerRequest') }}">
-                    {{ csrf_field() }}
                     <div class="full-name">
                         <input type="text" name="nama" id="name" placeholder="Full Name" class="name">
                     </div>
@@ -48,8 +46,6 @@
                             </div>
                         </a>
                     </div>
-                </form>
-                
             </div>
         </div>
     @endsection

@@ -15,7 +15,7 @@ class CreateCart extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->increments('cartId');
-            $table->integer('memberId');
+            $table->integer('memberId'); $table->
             $table->integer('cartStatus');
         });
     }
