@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class StarterSeeder extends Seeder
+class memberSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,22 +14,6 @@ class StarterSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('role')->insert([
-            'roleName' => 'Admin'
-        ]);
-
-        DB::table('role')->insert([
-            'roleName' => 'Member'
-        ]);
-
-        DB::table('gender')->insert([
-            'genderName' => 'Male'
-        ]);
-
-        DB::table('gender')->insert([
-            'genderName' => 'Female'
-        ]);
-
         DB::table('member')->insert([
             'memberName' => 'Admin',
             'genderId' => '1',

@@ -14,8 +14,11 @@ class CreateGender extends Migration
     public function up()
     {
         Schema::create('gender', function (Blueprint $table) {
-            $table->increments('genderId');
+            $table->id('genderId');
             $table->string('genderName');
+            $table->timestamps();
+
+            // $table->foreign('genre_id')->references('id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
