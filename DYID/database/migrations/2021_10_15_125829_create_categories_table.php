@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistory extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateHistory extends Migration
      */
     public function up()
     {
-        Schema::create('history', function (Blueprint $table) {
-            $table->id('historyId');
-            $table->unsignedBigInteger('memberId');
-            $table->foreign('memberId')->references('memberId')->on('member')->onUpdate('cascade')->onDelete('cascade');
-            $table->date('date');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id('categoryId');
+            $table->string('categoryName');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateHistory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history');
+        Schema::dropIfExists('categories');
     }
 }

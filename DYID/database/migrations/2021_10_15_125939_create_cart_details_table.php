@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoryDetail extends Migration
+class CreateCartDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateHistoryDetail extends Migration
      */
     public function up()
     {
-        Schema::create('history_detail', function (Blueprint $table) {
-            $table->unsignedBigInteger('historyId');
-            $table->foreign('historyId')->references('historyId')->on('history')->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('cart_details', function (Blueprint $table) {
+            $table->id('cartId');
             $table->unsignedBigInteger('productId');
             $table->foreign('productId')->references('productId')->on('product')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('quantity');
-            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateHistoryDetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history_detail');
+        Schema::dropIfExists('cart_details');
     }
 }

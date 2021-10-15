@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Member;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class memberSeeder extends Seeder
+class MemberSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +14,14 @@ class memberSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('member')->insert([
-        //     'memberName' => 'Admin',
-        //     'genderId' => '1',
-        //     'memberAddress' => 'admin street',
-        //     'memberEmail' => 'admin@gmail.com',
-        //     'memberPass' => 'admin',
-        //     'roleId' => '1'
-        // ]);
+        Member::create([
+            'memberName' => 'Admin',
+            'genderId' => '1',
+            'memberAddress' => 'admin street',
+            'memberEmail' => 'admin@gmail.com',
+            'memberPass' => 'admin',
+            'roleId' => '1'
+            
+        ]);
     }
 }

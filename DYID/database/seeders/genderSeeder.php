@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Gender;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class genderSeeder extends Seeder
+class GenderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +14,10 @@ class genderSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('gender')->insert([
+        Gender::create([
             'genderName' => 'Male'
         ]);
-
-        DB::table('gender')->insert([
+        Gender::create([
             'genderName' => 'Female'
         ]);
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGender extends Migration
+class CreateHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateGender extends Migration
      */
     public function up()
     {
-        Schema::create('gender', function (Blueprint $table) {
-            $table->id('genderId');
-            $table->string('genderName');
+        Schema::create('histories', function (Blueprint $table) {
+            $table->id('historyId');
+            $table->unsignedBigInteger('memberId');
+            $table->foreign('memberId')->references('memberId')->on('member')->onUpdate('cascade')->onDelete('cascade');
+            $table->date('date');
             $table->timestamps();
-
-            // $table->foreign('genre_id')->references('id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateGender extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gender');
+        Schema::dropIfExists('histories');
     }
 }

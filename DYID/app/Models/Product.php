@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
-    //which one is the foreign key?
     protected $attribute = [
         'productName',
         'productDescription',
@@ -23,5 +21,5 @@ class Product extends Model
     //         $table->string('productDescription');
     //         $table->integer('productPrice');
     //         $table->string('productImage');
-    //         $table->integer('categoryId');
+    // 
 }
