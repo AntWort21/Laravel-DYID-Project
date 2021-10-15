@@ -14,9 +14,11 @@ class CreateCart extends Migration
     public function up()
     {
         Schema::create('cart', function (Blueprint $table) {
-            $table->increments('cartId');
-            $table->integer('memberId'); $table->
+            $table->id('cartId');
+            $table->unsignedBigInteger('memberId');
+            $table->foreign('memberId')->references('memberId')->on('member')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('cartStatus');
+            $table->timestamps();
         });
     }
 

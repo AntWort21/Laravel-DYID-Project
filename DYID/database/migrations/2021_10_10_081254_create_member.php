@@ -14,13 +14,16 @@ class CreateMember extends Migration
     public function up()
     {
         Schema::create('member', function (Blueprint $table) {
-            $table->increments('memberId');
+            $table->id('memberId');
             $table->string('memberName');
-            $table->integer('genderId'); $table->foreign('genderId')->references('genderId')->on('gender')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('genderId');
+            $table->foreign('genderId')->references('genderId')->on('gender')->onUpdate('cascade')->onDelete('cascade');
             $table->string('memberAddress');
             $table->string('memberEmail');
             $table->string('memberPass');
-            $table->integer('roleId'); $table->foreign('roleId')->references('roleId')->on('role')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('roleId');
+            $table->foreign('roleId')->references('roleId')->on('role')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
