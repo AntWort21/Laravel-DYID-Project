@@ -19,7 +19,7 @@ class MemberSeeder extends Seeder
             'genderId' => '1',
             'memberAddress' => 'admin street',
             'memberEmail' => 'admin@gmail.com',
-            'memberPass' => 'admin',
+            'memberPassword' => 'admin',
             'roleId' => '1'
             
         ]);
