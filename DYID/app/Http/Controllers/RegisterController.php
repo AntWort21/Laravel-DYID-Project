@@ -14,11 +14,11 @@ class RegisterController extends Controller
     public function insert(Request $request){
         $member = new Member();
         $member->memberName = $request->name;
-        $member->gender = $request->gender;
+        $member->genderId = $request->genderId;
         $member->memberAddress = $request->address;
         $member->memberEmail = $request->email;
         $member->memberPassword = $request->password;
-        // $member->roleId = $request->roleId;
+        $member->roleId = $request->roleId;
 
         $member->save();
 
