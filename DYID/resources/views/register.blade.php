@@ -22,8 +22,9 @@
                     </div>
                     <div class="gender">
                         <h3>Gender</h3>
-                        <label for="male"><input type="radio" name="gender" id="male" value="Male">Male</label>
-                        <label for="female"><input type="radio" name="gender" id="female" value="Female">Female</label>
+                        {{-- 1 -> male, 2 -> female --}}
+                        <label for="male"><input type="radio" name="gender" id="male" value="1">Male</label> 
+                        <label for="female"><input type="radio" name="gender" id="female" value="2">Female</label>
                     </div>
                     <div class="address">
                         <input type="text" name="address" id="address" placeholder="Address">
