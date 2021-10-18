@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -12,18 +12,18 @@ class RegisterController extends Controller
     }
 
     public function insert(Request $request){
-        $member = new Member();
-        $member->memberName = $request->name;
-        $member->gender = $request->gender;
-        $member->memberAddress = $request->address;
-        $member->memberEmail = $request->email;
-        $member->memberPassword = $request->password;
-        // $member->roleId = $request->roleId;
+        $user = new User();
+        $user->name = $request->name;
+        $user->gender_id = $request->gender;
+        $user->address = $request->address;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->role_id = $request->role_id;
 
-        $member->save();
+        $user->save();
 
 
-        // dd($member);
+        // dd($user);
         return view('dataInserted');
 
         // 'memberName',

@@ -22,8 +22,8 @@
                     </div>
                     <div class="gender">
                         <h3>Gender</h3>
-                        <label for="male"><input type="radio" name="gender" id="male" value="Male">Male</label>
-                        <label for="female"><input type="radio" name="gender" id="female" value="Female">Female</label>
+                        <label for="male"><input type="radio" name="gender" id="male" value="1">Male</label>
+                        <label for="female"><input type="radio" name="gender" id="female" value="2">Female</label>
                     </div>
                     <div class="address">
                         <input type="text" name="address" id="address" placeholder="Address">
@@ -38,7 +38,7 @@
                         <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
                     </div>
                     <div class="terms-and-services">
-                        <input type="checkbox" name="checkbox" id="checkbox">
+                        <input type="checkbox" name="role_id" id="role_id" value="2">
                         <label for="terms-and-service">I agree with the terms and conditions</label>
                     </div>
                     <div class="submit-reset">
