@@ -14,9 +14,9 @@ class CreateHistoriesTable extends Migration
     public function up()
     {
         Schema::create('histories', function (Blueprint $table) {
-            $table->id('historyId');
-            $table->unsignedBigInteger('memberId');
-            $table->foreign('memberId')->references('memberId')->on('members')->onUpdate('cascade')->onDelete('cascade');
+            $table->id('history_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('user_id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->date('date');
             $table->timestamps();
         });
