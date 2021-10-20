@@ -22,7 +22,9 @@
             <div class="header-lower">
                 <div class="nav-bar">
                     <div class="home">
-                        Home
+                        <a href="mainpage">
+                            Home
+                        </a>
                     </div>
                     <div class="my-cart">
                         My Cart
