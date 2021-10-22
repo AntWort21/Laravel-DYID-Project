@@ -10,4 +10,14 @@ class MainpageController extends Controller
     {
         return view('mainpage');
     }
+
+    public function getItem(){
+        
+    }
+
+
+    public function viewProductDetail(){
+
+        return view('product_detail');
+    }
 }

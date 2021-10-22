@@ -15,10 +15,11 @@
             <div class='page-title'>
                 New Stuffs
             </div>
-           
+           {{-- @for() --}}
             <div class='big-itembox'>
+                {{-- foreach($items as $item) --}}
                 <div class='small-itembox'> 
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -28,7 +29,7 @@
                 </div>
 
                 <div class='small-itembox'>
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -38,7 +39,7 @@
                 </div>
 
                 <div class='small-itembox'>
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -46,11 +47,12 @@
                     </div>
                     <button class='detail-button'>More Detail</button>
                 </div>
+                {{-- @endforeach --}}
             </div>
 
             <div class='big-itembox'>
                 <div class='small-itembox'> 
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -60,7 +62,7 @@
                 </div>
 
                 <div class='small-itembox'>
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -70,7 +72,7 @@
                 </div>
 
                 <div class='small-itembox'>
-                    <img src="{{ asset('pictures/item.jpg') }}" alt="" class='product-image'>
+                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                     <div class='small-textbox'>
                         <h3>This is the item's name</h3>
                         <p class='item-description'>This is the item's description</p>
@@ -80,7 +82,8 @@
                 </div>
             </div>
 
-        </div>    
+        </div> 
+           {{-- end --}}
     
 
 
