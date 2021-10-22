@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MainpageController extends Controller
 {
     public function index()
     {
-        return view('mainpage');
-    }
-
-    public function getItem(){
-        
+        $products = Product::all();
+        // dd($products);
+        return view('mainpage', [
+            'products' => $products
+        ]);
     }
 
 

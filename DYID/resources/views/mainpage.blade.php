@@ -15,75 +15,40 @@
             <div class='page-title'>
                 New Stuffs
             </div>
-           {{-- @for() --}}
-            <div class='big-itembox'>
-                {{-- foreach($items as $item) --}}
-                <div class='small-itembox'> 
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p class='item-price'>IDR. 30,000</p>
+           @foreach($products as $product)
+                    <div class='big-itembox'>
+                        @for($i = 1 ; $i <= 3 ; $i++)
+                            @if($product->product_id == $i) 
+                                <div class='small-itembox'> 
+                                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
+                                    <div class='small-textbox'>
+                                        <h3>{{ $product->product_name }}</h3>
+                                        <p class='item-description'>{{ $product->product_description }}</p>
+                                        <p class='item-price'>{{ $product->product_price }}</p>
+                                    </div>
+                                    <button class='detail-button'>More Details</button>
+                                </div>
+                            @endif
+                        @endfor
                     </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
 
-                <div class='small-itembox'>
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p class='item-price'>IDR. 30,000</p>
+                    <div class='big-itembox'>
+                        @for($i = 4 ; $i <= 6 ; $i++)
+                            @if($product->product_id == $i) 
+                                <div class='small-itembox'> 
+                                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
+                                    <div class='small-textbox'>
+                                        <h3>{{ $product->product_name }}</h3>
+                                        <p class='item-description'>{{ $product->product_description }}</p>
+                                        <p class='item-price'>{{ $product->product_price }}</p>
+                                    </div>
+                                    <button class='detail-button'>More Details</button>
+                                </div>
+                            @endif
+                        @endfor
                     </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
-
-                <div class='small-itembox'>
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p class='item-price'>IDR. 30,000</p>
-                    </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
-                {{-- @endforeach --}}
-            </div>
-
-            <div class='big-itembox'>
-                <div class='small-itembox'> 
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p >IDR. 30,000</p>
-                    </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
-
-                <div class='small-itembox'>
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p>IDR. 30,000</p>
-                    </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
-
-                <div class='small-itembox'>
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                    <div class='small-textbox'>
-                        <h3>This is the item's name</h3>
-                        <p class='item-description'>This is the item's description</p>
-                        <p>IDR. 30,000</p>
-                    </div>
-                    <button class='detail-button'>More Detail</button>
-                </div>
-            </div>
-
-        </div> 
-           {{-- end --}}
+                </div> 
+           @endforeach
     
 
 
