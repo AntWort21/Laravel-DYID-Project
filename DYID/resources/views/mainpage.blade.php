@@ -55,18 +55,3 @@
     @endsection
 </body>
 </html>
-
-{{-- <style>
-.big-itembox{
-    display: flex;
-    justify-content: space-around;
-}
-
-.small-itembox{
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 30%;
-}
-
-</style> --}}

@@ -6,6 +6,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainpageController;
 use App\Http\Controllers\NewproductController;
+use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\EditCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,9 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/insertion', [RegisterController::class, 'insert']);
 Route::get('/mainpage', [MainpageController::class, 'index']);
 Route::get('/newproduct', [NewproductController::class, 'index']);
+Route::get('/productdetail', [ProductDetailController::class, 'index']);
+Route::get('/cart', [CartController::class, 'index']);
+Route::get('/editcart', [EditCartController::class, 'index']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');

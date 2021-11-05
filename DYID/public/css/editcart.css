@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product-box{
+    margin: 20px;
+    display: flex;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+.product-image{
+    margin: 20px;
+}
+
+.desc-box{
+    margin: 20px;
+}
+
+.quantity-box{
+    display: flex;
+}
+
+.input-quantity{
+    width: 50px;
+    padding: 8px 5px;;
+}
+
+.save-button{
+    background-color: orange;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
