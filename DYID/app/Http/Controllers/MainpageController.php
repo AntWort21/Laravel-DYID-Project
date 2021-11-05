@@ -9,7 +9,7 @@ class MainpageController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
         // dd($products);
         return view('mainpage', [
             'products' => $products
