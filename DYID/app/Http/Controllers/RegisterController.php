@@ -24,7 +24,7 @@ class RegisterController extends Controller
 
 
         // dd($user);
-        return view('dataInserted');
+        return redirect('mainpage');
 
         // 'memberName',
         // 'genderId',

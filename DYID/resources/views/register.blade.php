@@ -15,7 +15,7 @@
                 <div class="join-msg">
                     <h2>Join With Us</h2>    
                 </div>
-                <form action="/insertion" method="POST" enctype="multipart/form-data">
+                <form action="/register/insertion" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="full-name">
                         <input type="text" name="name" id="name" placeholder="Full Name" class="name">

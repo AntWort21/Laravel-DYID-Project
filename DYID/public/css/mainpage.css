@@ -2,9 +2,16 @@
     background-color: aliceblue;
 }
 
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
 .big-itembox{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .page-title{
@@ -64,7 +71,7 @@ h3{
 .w-5{
     display: none;
 }
-span, a{
+span a{
     color: black !important;
 }
 

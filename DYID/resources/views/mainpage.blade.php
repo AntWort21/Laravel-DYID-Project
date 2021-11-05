@@ -15,24 +15,27 @@
             <div class='page-title'>
                 New Stuffs
             </div>
-           @foreach($products as $product)
-                    <div class='big-itembox'>
-                        <div class='small-itembox'> 
-                            <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                                <div class='small-textbox'>
-                                    <h3>{{ $product->product_name }}</h3>
-                                    <p class='item-description'>{{ $product->product_description }}</p>
-                                    <p class='item-price'>{{ $product->product_price }}</p>
+            <div class="item">
+                @foreach($products as $product)
+                            <div class='big-itembox'>
+                                <div class='small-itembox'> 
+                                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
+                                        <div class='small-textbox'>
+                                            <h3>{{ $product->product_name }}</h3>
+                                            <p class='item-description'>{{ $product->product_description }}</p>
+                                            <p class='item-price'>{{ $product->product_price }}</p>
+                                        </div>
+                                    <button class='detail-button'>More Details</button>
                                 </div>
-                            <button class='detail-button'>More Details</button>
-                         </div>
-                    </div>
-           @endforeach
-                <div class="pagination">
-                    <span>    
-                        {{ $products->onEachSide(5)->links() }}
-                   <span>
-                </div>
+                            </div>
+                @endforeach
+            </div>
+            <div class="pagination">
+                <span>    
+                    {{ $products->onEachSide(5)->links() }}
+                <span>
+            </div>
+        </div>
     @endsection
 </body>
 </html>

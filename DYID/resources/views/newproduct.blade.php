@@ -13,7 +13,7 @@
         <div class="content">
             <div class="new-product-content-box">
             
-                <form method="POST">
+                <form action="/newproduct/insertion"  method="POST">
                     @csrf
 
                     <div class="title">

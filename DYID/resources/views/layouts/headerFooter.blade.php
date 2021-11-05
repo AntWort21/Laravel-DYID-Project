@@ -33,9 +33,12 @@
                         History Transaction
                     </div>
                     <div class="manage-product">
-                        Manage Product
+                        <a href="manageproduct">
+                            Manage Product
+                        </a>
                     </div>
                     <div class="manage-category">
+                        {{-- <a href="managecategory"></a> --}}
                         Manage Category
                     </div>
                 </div>
