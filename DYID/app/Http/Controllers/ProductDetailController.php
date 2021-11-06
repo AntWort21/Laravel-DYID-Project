@@ -10,4 +10,9 @@ class ProductDetailController extends Controller
     {
         return view('productdetail');
     }
+
+    public function addcart()
+    {
+        return redirect('mainpage');
+    }
 }

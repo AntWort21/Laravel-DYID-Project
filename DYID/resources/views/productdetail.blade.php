@@ -25,6 +25,11 @@
 
                     <h3>Description</h3>
                     <p>Resolution 3 1080 x 2 160 Power Consumption 185 W | 225 W HDMI 4 USB 2 Picture Engine Quantum Processor 4k Design</p>
+
+                    <form action="productdetail/addcart">
+                        <input type="hidden">
+                        <button class="orange-button">Add to Cart</button>
+                    </form>
                 </div>
             </div>
         </div>

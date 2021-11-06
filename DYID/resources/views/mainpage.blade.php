@@ -29,7 +29,10 @@
                                             <p class='item-description'>{{ $product->product_description }}</p>
                                             <p class='item-price'>IDR. {{ $product->product_price }}</p>
                                         </div>
-                                    <button class='detail-button'>More Details</button>
+                                        <form action="mainpage/detail">
+                                            <input type="hidden">
+                                            <button type="submit" class='detail-button'>More Details</button>
+                                        </form>
                                 </div>
                             </div>
                     @if($loop->last || $loop->iteration == 3)

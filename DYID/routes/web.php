@@ -27,9 +27,11 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 Route::get('/mainpage', [MainpageController::class, 'index']);
+Route::get('/mainpage/detail', [MainpageController::class, 'detail']);
 Route::get('/newproduct', [NewproductController::class, 'index']);
 Route::post('/newproduct/insertion', [NewproductController::class, 'insert']);
 Route::get('/productdetail', [ProductDetailController::class, 'index']);
+Route::get('/productdetail/addcart', [ProductDetailController::class, 'addcart']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/editcart', [EditCartController::class, 'index']);
 
