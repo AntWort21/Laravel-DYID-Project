@@ -9,6 +9,7 @@ use App\Http\Controllers\NewproductController;
 use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\EditCartController;
+use App\Http\Controllers\ViewProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::get('/productdetail', [ProductDetailController::class, 'index']);
 Route::get('/productdetail/addcart', [ProductDetailController::class, 'addcart']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/editcart', [EditCartController::class, 'index']);
+Route::get('/viewproduct', [ViewProductController::class, 'index']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
