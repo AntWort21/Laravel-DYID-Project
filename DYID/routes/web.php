@@ -34,13 +34,13 @@ Route::get('/productdetail', [PageController::class, 'productDetailPage']);
 Route::get('/viewproduct', [PageController::class, 'viewProductPage']);
 
 //cart
-Route::get('/cart', [PageController::class, 'cartPage']);
-Route::get('/editcart', [PageController::class, 'editCartPage']);
+Route::get('/cart', [PageController::class, 'cartPage']);//new
+Route::get('/editcart', [PageController::class, 'editCartPage']);//new
 
 //category
-Route::get('/editcategory', [PageController::class, 'editCategoryPage']);
-Route::get('/newcategory', [PageController::class, 'newCategoryPage']);
-Route::get('/updatecategory', [PageController::class, 'updateCategoryPage']);
+Route::get('/editcategory', [PageController::class, 'editCategoryPage']);//new
+Route::get('/newcategory', [PageController::class, 'newCategoryPage']);//new
+Route::get('/updatecategory', [PageController::class, 'updateCategoryPage']);//new
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
