@@ -9,6 +9,7 @@ use App\Http\Controllers\NewproductController;
 use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\EditCartController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,13 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 Route::get('/mainpage', [MainpageController::class, 'index']);
-Route::get('/newproduct', [NewproductController::class, 'index']);
-Route::post('/newproduct/insertion', [NewproductController::class, 'insert']);
-Route::get('/productdetail', [ProductDetailController::class, 'index']);
+
+//product
+Route::get('/newproduct', [ProductController::class, 'addProductPage']);
+Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
+Route::get('/productdetail', [ProductController::class, 'productDetailPage']);
+
+//cart
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/editcart', [EditCartController::class, 'index']);
 
@@ -41,3 +46,7 @@ Route::get('/editcart', [EditCartController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
