@@ -36,6 +36,7 @@ Route::get('/productdetail', [ProductController::class, 'productDetailPage']);
 //cart
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/editcart', [EditCartController::class, 'index']);
+Route::get('/viewproduct', [ViewProductController::class, 'index']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
@@ -45,6 +46,14 @@ Route::get('/editcart', [EditCartController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

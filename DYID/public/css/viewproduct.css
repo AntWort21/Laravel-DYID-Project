@@ -1,0 +1,82 @@
+.product-image{
+    width:100%;
+}
+
+.page-title{
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+tr:nth-child(odd){
+    background-color: blanchedalmond;
+}
+
+tr:nth-child(even){
+    background-color: lightyellow;
+}
+
+table{
+    width: 100%;
+}
+
+.no{
+    width: 3%;
+}
+
+.product-image{
+    width: 100%;
+}
+
+.image{
+    width: 16%;
+}
+
+.name{
+    width: 10%;
+}
+
+.desc{
+    width: 40%;
+}
+
+.price{
+    width: 9%;
+}
+
+.category{
+    width: 9%;
+}
+
+.action{
+    width: 13%;
+    display: in;
+}
+
+.red-button{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-left: 2px;
+}
+
+.red-button:hover{
+    background-color: darkred;
+}
+
+.orange-button{
+    background-color: orange;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-right: 2px;
+}
+
+.orange-button:hover{
+    background-color: darkorange;
+}
