@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    @extends('layouts/headerFooter')
+    @extends('layouts.app')
     @section('content')
         Data Inserted Successfully
     @endsection
