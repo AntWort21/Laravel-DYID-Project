@@ -17,7 +17,7 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('cart_status');
+            $table->integer('status');
             $table->timestamps();
         });
     }

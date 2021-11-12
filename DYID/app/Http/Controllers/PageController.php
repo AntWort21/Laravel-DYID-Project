@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,13 @@ class PageController extends Controller
     }
 
     public function addProductPage(){
-        return view('newproduct');
+        $allCategories = Category::all();
+
+        $arr = [
+            'categories' => $allCategories
+        ];
+        
+        return view('newproduct', $arr);
     }
 
     public function cartPage()

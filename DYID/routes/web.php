@@ -21,8 +21,10 @@ use App\Http\Controllers\PageController;
 Route::get('/register', [PageController::class, 'registerPage']);
 Route::get('/login', [PageController::class, 'loginPage']);
 Route::post('/login', [LoginController::class, 'login']);
+
 Route::get('/logout', [PageController::class, 'logoutPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
+
 Route::get('/mainpage', [PageController::class, 'mainPage']);
 
 //product
@@ -46,4 +48,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [PageController::class, 'homePage'])->name('home');

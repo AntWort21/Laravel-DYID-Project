@@ -4,7 +4,7 @@
     <div class="content">
         <div class="new-product-content-box">
             
-            <form action="/newproduct/insertion"  method="POST">
+            <form action="/newproduct/insertion"  method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="d-flex justify-content-center">
@@ -54,14 +54,6 @@
                     </div>
                 </div>
 
-                <div class="inputbox">
-                    <select name="category" class="categorybox">
-                        <option value="1" selected>Electronics</option>
-                        <option value="2" >Accessories</option>
-                        <option value="3" >Games</option>
-                    </select>
-                </div>
-
                 <div class="form-group row">
                     <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
     
@@ -72,7 +64,7 @@
                             @endforeach
                         </select>
     
-                        @error('genre')
+                        @error('category')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -94,13 +86,14 @@
                     </div>
                 </div>
 
-
-
-                <div class="submit-reset">
-                    <div>
-                        <input class="submitBtn" type="submit" value="Add">
+                <div class="form-group row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Insert') }}
+                        </button>
                     </div>
                 </div>
+
             </form>
         </div>
     </div>

@@ -20,19 +20,18 @@
                     @if ($loop->iteration == 4 || $loop->iteration == 1)
                         <div class="item">
                     @endif
-
-                            <div class='big-itembox'>
-                                <div class='small-itembox'> 
-                                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                                        <div class='small-textbox'>
-                                            <h3>{{ $product->product_name }}</h3>
-                                            <p class='item-description'>{{ $product->product_description }}</p>
-                                            <p class='item-price'>IDR. {{ $product->product_price }}</p>
-                                        </div>
-                                    <button class='detail-button'>More Details</button>
-                                </div>
+                        <div class='big-itembox'>
+                            <div class='small-itembox'> 
+                                <img src="../storage/productImage/{{ $product->image }}" alt="" class='product-image'>
+                                <div class='small-textbox'>
+                                        <h3>{{ $product->name }}</h3>
+                                        <p class='item-description'>{{ $product->description }}</p>
+                                        <p class='item-price'>IDR. {{ $product->price }}</p>
+                                    </div>
+                                <button class='detail-button'>More Details</button>
                             </div>
-                    @if($loop->last || $loop->iteration == 3)
+                        </div>
+                   @if($loop->last || $loop->iteration == 3)
                         </div>
                     @endif
                 @endforeach
