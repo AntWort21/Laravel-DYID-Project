@@ -26,6 +26,7 @@ Route::get('/logout', [PageController::class, 'logoutPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 
 Route::get('/mainpage', [PageController::class, 'mainPage']);
+Route::get('/', [PageController::class, 'mainPage']);
 
 //product
 Route::get('/newproduct', [PageController::class, 'addProductPage']);
@@ -47,9 +48,9 @@ Route::get('/updatecategory', [PageController::class, 'updateCategoryPage']);//n
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('mainpage');
+// });
 
 Auth::routes();
 
