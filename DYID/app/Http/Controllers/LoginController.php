@@ -12,10 +12,6 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('login');
-    }
 
     public function login(Request $request){
         // $info = [

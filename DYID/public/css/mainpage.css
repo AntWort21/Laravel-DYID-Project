@@ -49,6 +49,10 @@
     padding: 5px 15px;
 }
 
+.detail-button:hover{
+    background-color: darkorange;
+}
+
 .item-description{
     color: grey;
 }

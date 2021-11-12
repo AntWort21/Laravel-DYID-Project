@@ -7,13 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function productDetailPage(){
-        return view('productdetail');
-    }
-
-    public function addProductPage(){
-        return view('newproduct');
-    }
     public function insertProduct(Request $request){
         $product = new Product();
         $product->product_name = $request->name;

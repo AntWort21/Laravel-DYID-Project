@@ -2,13 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MainPageController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\EditCartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +18,22 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/register', [RegisterController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [PageController::class, 'registerPage']);
+Route::get('/login', [PageController::class, 'loginPage']);
 Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [PageController::class, 'logoutPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
-Route::get('/mainpage', [MainPageController::class, 'index']);
+Route::get('/mainpage', [PageController::class, 'mainPage']);
 
 //product
-Route::get('/newproduct', [ProductController::class, 'addProductPage']);
+Route::get('/newproduct', [PageController::class, 'addProductPage']);
 Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
-Route::get('/productdetail', [ProductController::class, 'productDetailPage']);
+Route::get('/productdetail', [PageController::class, 'productDetailPage']);
+Route::get('/viewproduct', [PageController::class, 'viewProductPage']);
 
 //cart
-Route::get('/cart', [CartController::class, 'index']);
-Route::get('/editcart', [EditCartController::class, 'index']);
+Route::get('/cart', [PageController::class, 'cartPage']);
+Route::get('/editcart', [PageController::class, 'editCartPage']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
