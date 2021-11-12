@@ -16,6 +16,11 @@ class MainPageController extends Controller
         ]);
     }
 
+    public function detail()
+    {
+        return redirect("productdetail");
+    }
+
 
     public function viewProductDetail(){
 
