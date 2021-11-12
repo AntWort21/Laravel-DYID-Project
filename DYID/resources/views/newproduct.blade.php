@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts/headerFooter')
     @section('content')
         <div class="content">
             <div class="new-product-content-box">

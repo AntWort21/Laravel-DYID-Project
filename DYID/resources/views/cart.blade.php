@@ -8,7 +8,7 @@
     <title>DYID My Cart</title>
 </head>
 <body>
-    @extends('layouts.app')
+    @extends('layouts/headerFooter')
     @section('content')
         <div class='content'>
 
