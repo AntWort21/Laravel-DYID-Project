@@ -20,11 +20,20 @@
                     <h3>Category:</h3>
                     <p>Television</p>
 
+                    <hr>
+
                     <h3>Price:</h3>
                     <p>IDR. 21.000.000</p>
 
+                    <hr>
+
                     <h3>Description</h3>
                     <p>Resolution 3 1080 x 2 160 Power Consumption 185 W | 225 W HDMI 4 USB 2 Picture Engine Quantum Processor 4k Design</p>
+
+                    <hr>
+
+                    <button class="orange button">Add to cart</button>
+
                 </div>
             </div>
         </div>

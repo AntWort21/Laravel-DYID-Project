@@ -87,13 +87,14 @@
                     </a>
                 </div>
                 <div class="my-cart">
+                    <a href="cart">
                     My Cart
                 </div>
                 <div class="history-transaction">
                     History Transaction
                 </div>
                 <div class="manage-product">
-                    <a href="manageproduct">
+                    <a href="viewproduct">
                         Manage Product
                     </a>
                 </div>

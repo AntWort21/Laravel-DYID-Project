@@ -8,13 +8,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function productDetailPage(){
-        return view('productdetail');
-    }
-
-    public function addProductPage(){
-        return view('newproduct');
-    }
     public function insertProduct(Request $request){
 
         $image = $request->file('image');
