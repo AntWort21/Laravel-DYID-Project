@@ -15,66 +15,66 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'product_name' => 'A',
-            'product_description' => 'ini A',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'A',
+            'description' => 'ini A',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'B',
-            'product_description' => 'ini B',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'B',
+            'description' => 'ini B',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'C',
-            'product_description' => 'ini C',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'C',
+            'description' => 'ini C',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'D',
-            'product_description' => 'ini D',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'D',
+            'description' => 'ini D',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'E',
-            'product_description' => 'ini E',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'E',
+            'description' => 'ini E',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'F',
-            'product_description' => 'ini F',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'F',
+            'description' => 'ini F',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'G',
-            'product_description' => 'ini G',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'G',
+            'description' => 'ini G',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'H',
-            'product_description' => 'ini H',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'H',
+            'description' => 'ini H',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
         Product::create([
-            'product_name' => 'I',
-            'product_description' => 'ini I',
-            'product_price' => '10000',
-            'product_image' => 'image.jpg',
+            'name' => 'I',
+            'description' => 'ini I',
+            'price' => '10000',
+            'image' => 'image.jpg',
             'category_id' => '1'
         ]);
     }
