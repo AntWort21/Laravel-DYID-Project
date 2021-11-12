@@ -32,7 +32,12 @@
 
                     <hr>
 
-                    <button class="orange button">Add to cart</button>
+                    <button class="orange-button">Login to buy</button>
+
+                    <hr>
+                    <label for="Qty">Qty: </label>
+                    <input class="quantity" type="text">
+                    <button class="orange-button">Add to Cart</button>
 
                 </div>
             </div>

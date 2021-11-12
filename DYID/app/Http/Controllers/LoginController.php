@@ -22,7 +22,7 @@ class LoginController extends Controller
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             echo "nice";
             exit;
-            return redirect()->back();
+            return redirect('mainpage');
         }
         return 'fail';
     }

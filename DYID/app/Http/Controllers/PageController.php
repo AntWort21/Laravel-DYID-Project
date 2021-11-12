@@ -52,4 +52,16 @@ class PageController extends Controller
     {
         return view('viewproduct');
     }
+
+    public function editCategoryPage(){
+        return view('editcategory');
+    }
+
+    public function newCategoryPage(){
+        return view('newcategory');
+    }
+
+    public function updateCategoryPage(){
+        return view('updatecategory');
+    }
 }

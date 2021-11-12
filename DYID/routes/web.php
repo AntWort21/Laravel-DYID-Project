@@ -35,6 +35,11 @@ Route::get('/viewproduct', [PageController::class, 'viewProductPage']);
 Route::get('/cart', [PageController::class, 'cartPage']);
 Route::get('/editcart', [PageController::class, 'editCartPage']);
 
+//category
+Route::get('/editcategory', [PageController::class, 'editCategoryPage']);
+Route::get('/newcategory', [PageController::class, 'newCategoryPage']);
+Route::get('/updatecategory', [PageController::class, 'updateCategoryPage']);
+
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
 
@@ -46,4 +51,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\PageController::class, 'homePage'])->name('home');
