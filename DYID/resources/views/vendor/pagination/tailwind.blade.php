@@ -1,11 +1,6 @@
-
-
 @if ($paginator->hasPages())
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
         <div class="flex justify-between flex-1 sm:hidden">
-
-
-            {{-- FIRST LINE HERE --}}
             @if ($paginator->onFirstPage())
                 <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md">
                     {!! __('pagination.previous') !!}
@@ -27,13 +22,11 @@
             @endif
         </div>
 
-
-        {{-- SECOND LINE HERE --}}
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p class="text-sm text-gray-700 leading-5">
                     {!! __('Showing') !!}
-                    <span class="font-medium"> {{ $paginator->firstItem() }}</span>
+                    <span class="font-medium">{{ $paginator->firstItem() }}</span>
                     {!! __('to') !!}
                     <span class="font-medium">{{ $paginator->lastItem() }}</span>
                     {!! __('of') !!}
@@ -71,8 +64,6 @@
                         @endif
 
                         {{-- Array Of Links --}}
-
-                        {{-- THIRD LINE --}}
                         @if (is_array($element))
                             @foreach ($element as $page => $url)
                                 @if ($page == $paginator->currentPage())

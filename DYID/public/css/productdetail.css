@@ -23,25 +23,3 @@ body{
 .desc-box{
     margin: 20px;
 }
-
-.orange-button{
-    background-color: orange;
-    /* margin-left: 10px; */
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border: none;
-    margin-right: 10px;
-    border-radius: 4px;
-    padding: 5px 15px;
-}
-
-.orange-button:hover{
-    background-color: darkorange;
-    /* margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 2px;
-    border: none;
-    margin-right: 10px;
-    border-radius: 4px;
-    padding: 5px 15px; */
-}

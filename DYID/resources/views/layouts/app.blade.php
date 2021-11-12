@@ -7,7 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+        {{-- {{ config('app.name', 'Laravel') }} --}}
+        DYID
+    </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,13 +21,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/headerfooter.css') }}">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-orange shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                    <img src="{{ asset('storage/DYIDtrans.png') }}" alt="" class="logo-size" width="100px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,13 +46,13 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item login">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item register">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
@@ -74,10 +79,59 @@
                 </div>
             </div>
         </nav>
+        <div class="header-lower">
+            <div class="nav-bar">
+                <div class="home">
+                    <a href="mainpage">
+                        Home
+                    </a>
+                </div>
+                <div class="my-cart">
+                    My Cart
+                </div>
+                <div class="history-transaction">
+                    History Transaction
+                </div>
+                <div class="manage-product">
+                    <a href="manageproduct">
+                        Manage Product
+                    </a>
+                </div>
+                <div class="manage-category">
+                    {{-- <a href="managecategory"></a> --}}
+                    Manage Category
+                </div>
+            </div>
+        </div>
+
 
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div>
+            <div class="footer">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="facebook">
+                            <img src="{{ asset('storage/facebook.png') }}" alt="" class="fbLogo">
+                        </div>
+                        <div class="instagram">
+                            <img src="{{ asset('storage/ig-logo.png') }}" alt="" class="igLogo">
+                        </div>
+                        <div class="youtube">
+                            <img src="{{ asset('storage/yt-logo.png') }}" alt="" class="ytLogo">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="footer-note">
+                    <div class="copyright">
+                        &copy 2021 Copyright DY.ID
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
