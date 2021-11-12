@@ -84,18 +84,20 @@ a:visited{
 
 .login{
     color: white;
+    background-color: white;
     padding: 10px;
     border-style: solid;
-    border-color: white;
+    border-color: rgba(255,255,255, 1);
     border-radius: 5px;
     margin-right: 10px;
 }
 
 .register{
     color: white;
+    background-color: white;
     padding: 10px;
     border-style: solid;
-    border-color: white;
+    border-color: rgba(255,255,255, 1);
     border-radius: 5px;
     margin-right: 10px;
 }

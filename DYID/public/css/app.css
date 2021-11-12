@@ -6203,6 +6203,10 @@ button.bg-dark:focus {
   background-color: #fff !important;
 }
 
+.bg-orange{
+  background-color: orange !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }

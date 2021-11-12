@@ -1,12 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MainpageController;
-use App\Http\Controllers\NewproductController;
-use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\EditCartController;
 use App\Http\Controllers\ProductController;
@@ -27,7 +26,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
-Route::get('/mainpage', [MainpageController::class, 'index']);
+Route::get('/mainpage', [MainPageController::class, 'index']);
 
 //product
 Route::get('/newproduct', [ProductController::class, 'addProductPage']);

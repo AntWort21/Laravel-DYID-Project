@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class MainpageController extends Controller
+class MainPageController extends Controller
 {
     public function index()
     {

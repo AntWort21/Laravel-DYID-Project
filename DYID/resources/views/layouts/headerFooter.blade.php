@@ -57,7 +57,9 @@
             </div>
         </div>
     </div>
-    @yield('content')
+    <main class="py-4">
+        @yield('content')
+    </main>
     <div>
         <div class="footer">
             <div class="footer-logo">
