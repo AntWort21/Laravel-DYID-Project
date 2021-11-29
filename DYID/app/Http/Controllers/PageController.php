@@ -31,8 +31,16 @@ class PageController extends Controller
         ]);
     }
 
-    public function productDetailPage(){
-        return view('productdetail');
+    public function productDetailPage(Request $request){
+        $id = $request->id;
+
+        $selectedProduct = Product::where('id', $id)->first();
+
+        $data = [
+            'selectedProduct' => $selectedProduct
+        ];
+
+        return view('productdetail', $data);
     }
 
     public function addProductPage(){

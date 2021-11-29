@@ -82,12 +82,12 @@
         <div class="header-lower">
             <div class="nav-bar">
                 <div class="home">
-                    <a href="mainpage">
+                    <a href="/mainpage">
                         Home
                     </a>
                 </div>
                 <div class="my-cart">
-                    <a href="cart">
+                    <a href="/cart">
                     My Cart
                 </div>
                 <div class="history-transaction">
@@ -115,13 +115,13 @@
                 <div class="footer-logo">
                     <div class="logo">
                         <div class="facebook">
-                            <img src="{{ asset('storage/facebook.png') }}" alt="" class="fbLogo">
+                            <img src="{{ asset('storage/facebook.png') }}" alt="" class="fbLogo" style="width: 40px; height: 40px">
                         </div>
                         <div class="instagram">
-                            <img src="{{ asset('storage/ig-logo.png') }}" alt="" class="igLogo">
+                            <img src="{{ asset('storage/ig-logo.png') }}" alt="" class="igLogo" style="width: 40px; height: 40px">
                         </div>
                         <div class="youtube">
-                            <img src="{{ asset('storage/yt-logo.png') }}" alt="" class="ytLogo">
+                            <img src="{{ asset('storage/yt-logo.png') }}" alt="" class="ytLogo" style="width: 40px; height: 40px"   >
                         </div>
                     </div>
                 </div>

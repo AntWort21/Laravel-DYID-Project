@@ -16,28 +16,33 @@
                     <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
                 </div> 
                 <div class="desc-box">
-                    <h2>Samsung 6S Crystal</h2>
-                    <h3>Category:</h3>
-                    <p>Television</p>
+
+                    <img src="../storage/productImage/{{ $selectedProduct->image }}" alt="" class='card-img-top'>
+
+                    <br><br>
+
+                    <h2>{{ $selectedProduct->name }}</h2>
+                    <h3>Category: {{ $selectedProduct->category_id }}</h3>
 
                     <hr>
 
                     <h3>Price:</h3>
-                    <p>IDR. 21.000.000</p>
+                    <p>IDR {{ $selectedProduct->price }}</p>
 
                     <hr>
 
                     <h3>Description</h3>
-                    <p>Resolution 3 1080 x 2 160 Power Consumption 185 W | 225 W HDMI 4 USB 2 Picture Engine Quantum Processor 4k Design</p>
+                    <p>{{ $selectedProduct->description }}</p>
 
                     <hr>
 
+                    {{-- if authentication --}}
                     <button class="orange-button">Login to buy</button>
 
                     <hr>
                     <label for="Qty">Qty: </label>
                     <input class="quantity" type="text">
-                    <button class="orange-button">Add to Cart</button>
+                    <button class="orange-button">Add to Cart</button>{{-- add to cart function --}}
 
                 </div>
             </div>

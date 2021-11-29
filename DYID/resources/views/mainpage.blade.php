@@ -28,7 +28,7 @@
                                     <p class='item-description'>{{ $product->description }}</p>
                                     <p class='item-price'>IDR. {{ $product->price }}</p>
                                 </div>
-                            <button class='detail-button'>More Details</button>
+                            <button class='detail-button'><a href="/productdetail/{{ $product->id }}">More Details</a></button>
                         </div>
                     </div>
                 @if($loop->last || $loop->iteration == 3)

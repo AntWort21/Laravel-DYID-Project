@@ -31,7 +31,7 @@ Route::get('/', [PageController::class, 'mainPage']);
 //product
 Route::get('/newproduct', [PageController::class, 'addProductPage']);
 Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
-Route::get('/productdetail', [PageController::class, 'productDetailPage']);
+Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
 Route::get('/viewproduct', [PageController::class, 'viewProductPage']);
 
 //cart
