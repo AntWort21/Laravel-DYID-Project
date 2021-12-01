@@ -36,13 +36,15 @@
 
                     <hr>
 
-                    {{-- if authentication --}}
-                    <button class="orange-button">Login to buy</button>
+                    @guest
+                        <button class="orange-button">Login to buy</button>
+                    @else
+                        <label for="Qty">Qty: </label>
+                        <input class="quantity" type="text" value="1">
+                        <button class="orange-button">Add to Cart</button>
+                    @endguest
 
                     <hr>
-                    <label for="Qty">Qty: </label>
-                    <input class="quantity" type="text">
-                    <button class="orange-button">Add to Cart</button>{{-- add to cart function --}}
 
                 </div>
             </div>
