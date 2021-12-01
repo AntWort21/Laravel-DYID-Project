@@ -37,7 +37,7 @@
                     <hr>
 
                     @guest
-                        <button class="orange-button">Login to buy</button>
+                        <a href="/login"><button class="orange-button">Login to buy</button></a>
                     @else
                         <label for="Qty">Qty: </label>
                         <input class="quantity" type="text" value="1">
