@@ -26,7 +26,7 @@ class PageController extends Controller
     {
         $products = Product::paginate(6);
         // dd($products);
-        return view('mainpage', [
+        return view('mainPage', [
             'products' => $products
         ]);
     }
@@ -40,7 +40,19 @@ class PageController extends Controller
             'selectedProduct' => $selectedProduct
         ];
 
-        return view('productdetail', $data);
+        return view('productDetail', $data);
+    }
+
+    public function productUpdatePage(Request $request){
+        $id = $request->id;
+        $selectedProduct = Product::where('id', $id)->first();
+
+        $data = [
+            'selectedProduct' => $selectedProduct
+        ];
+
+        return view("updateProduct", $data);
+
     }
 
     public function addProductPage(){
@@ -50,7 +62,7 @@ class PageController extends Controller
             'categories' => $allCategories
         ];
         
-        return view('newproduct', $arr);
+        return view('newProduct', $arr);
     }
 
     public function cartPage()
@@ -60,23 +72,29 @@ class PageController extends Controller
 
     public function editCartPage()
     {
-        return view('editcart');
+        return view('editCart');
     }
 
-    public function viewProductPage()
+    public function manageProductPage()
     {
-        return view('viewproduct');
+        $products = Product::all();
+        $categories = Category::all();
+        $data = [
+            'products' => $products,
+            'categories' => $categories
+        ];
+        return view('manageProduct', $data);
     }
 
     public function editCategoryPage(){
-        return view('editcategory');
+        return view('editCategory');
     }
 
     public function newCategoryPage(){
-        return view('newcategory');
+        return view('newCategory');
     }
 
     public function updateCategoryPage(){
-        return view('updatecategory');
+        return view('updateCategory');
     }
 }

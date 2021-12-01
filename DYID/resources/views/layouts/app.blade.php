@@ -87,20 +87,18 @@
                     </a>
                 </div>
                 <div class="my-cart">
-                    <a href="/cart">
-                    My Cart
+                    <a href="/cart">My Cart</a>
                 </div>
                 <div class="history-transaction">
                     History Transaction
                 </div>
                 <div class="manage-product">
-                    <a href="viewproduct">
+                    <a href="/viewproduct">
                         Manage Product
                     </a>
                 </div>
                 <div class="manage-category">
-                    {{-- <a href="managecategory"></a> --}}
-                    Manage Category
+                    <a href="/editcategory">Manage Category</a>
                 </div>
             </div>
         </div>

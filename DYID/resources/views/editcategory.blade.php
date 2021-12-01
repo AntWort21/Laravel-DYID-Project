@@ -37,7 +37,7 @@
 
                 <tr>
                     <th class="no">3</th>
-                    <th class="name">Adult toys</th>
+                    <th class="name">Toys</th>
                     <th class="action"><button type="submit" class="orange-button"><a href="updatecategory">Update</a></button><button type="submit" class="red-button">Delete</button></th>
                 </tr>
 

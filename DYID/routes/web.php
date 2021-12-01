@@ -28,11 +28,16 @@ Route::post('/register/insertion', [RegisterController::class, 'insert']);
 Route::get('/mainpage', [PageController::class, 'mainPage']);
 Route::get('/', [PageController::class, 'mainPage']);
 
-//product
+//product user access
 Route::get('/newproduct', [PageController::class, 'addProductPage']);
 Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
 Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
-Route::get('/viewproduct', [PageController::class, 'viewProductPage']);
+
+//product admin access
+Route::get('/viewproduct', [PageController::class, 'manageProductPage']);
+Route::get('/updateproduct/{id}', [PageController::class, 'productUpdatePage']);
+Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct']);
+Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
 
 //cart
 Route::get('/cart', [PageController::class, 'cartPage']);//new

@@ -33,4 +33,14 @@ class ProductController extends Controller
         $product->save();
         return redirect('mainpage');
     }
+
+    public function deleteProduct(Request $request){
+        $id = $request->id;
+        $selectedProduct = Product::where('id', $id)->first();
+        $selectedProduct->delete();
+        return redirect('manageProduct');
+    }
+    public function updateProduct(){
+
+    }
 }

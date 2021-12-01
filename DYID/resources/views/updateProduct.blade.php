@@ -13,11 +13,11 @@
         <div class="content">
             <div class="new-product-content-box">
             
-                <form action="/newproduct/insertion"  method="POST">
+                <form action=""  method="POST">
                     @csrf
 
                     <div class="title">
-                        <h2>Edit product</h2>    
+                        <h2>Update product</h2>    
                     </div>
 
                     <div class="inputbox">
