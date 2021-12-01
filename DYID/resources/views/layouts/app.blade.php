@@ -88,10 +88,13 @@
                 </div>
                 <div class="my-cart">
                     <a href="cart">
-                    My Cart
+                        My Cart
+                    </a>
                 </div>
                 <div class="history-transaction">
-                    History Transaction
+                    <a href="/history">
+                        History Transaction
+                    </a>
                 </div>
                 <div class="manage-product">
                     <a href="viewproduct">

@@ -82,6 +82,10 @@ a:visited{
     color: white;
 }
 
+a:hover{
+    color: white;
+}
+
 .login{
     color: white;
     background-color: white;

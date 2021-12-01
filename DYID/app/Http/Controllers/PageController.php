@@ -64,4 +64,9 @@ class PageController extends Controller
     public function updateCategoryPage(){
         return view('updatecategory');
     }
+
+    public function historyPage()
+    {
+        return view('history');
+    }
 }
