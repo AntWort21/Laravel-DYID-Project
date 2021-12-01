@@ -86,20 +86,31 @@
                         Home
                     </a>
                 </div>
-                <div class="my-cart">
-                    <a href="/cart">My Cart</a>
-                </div>
-                <div class="history-transaction">
-                    History Transaction
-                </div>
-                <div class="manage-product">
-                    <a href="/manageproduct">
-                        Manage Product
-                    </a>
-                </div>
-                <div class="manage-category">
-                    <a href="/managecategory">Manage Category</a>
-                </div>
+                @php
+                    $role = 0;    
+                @endphp
+                @if(Auth::check())
+                    @php
+                        $role = Auth::user()->role_id;
+                    @endphp
+                @endif
+                    @if ($role == 1)
+                        <div class="manage-product">
+                            <a href="/manageproduct">
+                                Manage Product
+                            </a>
+                        </div>
+                        <div class="manage-category">
+                            <a href="/managecategory">Manage Category</a>
+                        </div>
+                    @else
+                        <div class="my-cart">
+                            <a href="/cart">My Cart</a>
+                        </div>
+                        <div class="history-transaction">
+                            History Transaction
+                        </div>
+                    @endif
             </div>
         </div>
 

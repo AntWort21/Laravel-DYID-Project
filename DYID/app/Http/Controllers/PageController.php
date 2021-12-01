@@ -15,11 +15,11 @@ class PageController extends Controller
 
     public function loginPage()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function registerPage(){
-        return view('register');
+        return view('auth.register');
     }
 
     public function mainPage()

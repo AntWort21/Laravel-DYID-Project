@@ -19,11 +19,11 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/register', [PageController::class, 'registerPage']);
 Route::get('/login', [PageController::class, 'loginPage']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/logout', [PageController::class, 'logoutPage']);
+Route::get('/register', [PageController::class, 'registerPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 
 
