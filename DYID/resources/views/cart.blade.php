@@ -54,6 +54,7 @@
                 <p class="final-amount">IDR 50.376.000</p>
                 <button class="checkout-button">Check Out</button>
             </div>
+        </div>
     @endsection
 </body>
 </html>

@@ -52,6 +52,9 @@ Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage']
 Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory']);
 Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory']);
 
+//history
+Route::get('/history', [PageController::class, 'historyPage']);
+
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
 
