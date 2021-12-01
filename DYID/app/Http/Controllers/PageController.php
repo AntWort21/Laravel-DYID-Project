@@ -107,4 +107,9 @@ class PageController extends Controller
         ];
         return view('updateCategory', $data);
     }
+
+    public function historyPage()
+    {
+        return view('history');
+    }
 }
