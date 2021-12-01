@@ -44,6 +44,9 @@ Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
 Route::get('/cart', [PageController::class, 'cartPage']);//new
 Route::get('/editcart', [PageController::class, 'editCartPage']);//new
 
+//history
+
+
 //category
 Route::get('/managecategory', [PageController::class, 'manageCategoryPage']);
 Route::get('/newcategory', [PageController::class, 'addCategoryPage']);
