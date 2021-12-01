@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $attribute = [
-        'productName',
-        'productDescription',
-        'productPrice',
-        'productImage',
-        'categoryId'
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'image',
+        'category_id'
     ];
 
     // $table->increments('productId');

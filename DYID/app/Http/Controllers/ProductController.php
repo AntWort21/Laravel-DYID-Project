@@ -31,16 +31,34 @@ class ProductController extends Controller
         $product->image = $image->getClientOriginalName();
         Storage::putFileAs('public/productImage', $image, $image->getClientOriginalName());
         $product->save();
-        return redirect('mainpage');
+        return redirect('/mainpage');
     }
 
     public function deleteProduct(Request $request){
         $id = $request->id;
         $selectedProduct = Product::where('id', $id)->first();
         $selectedProduct->delete();
-        return redirect('manageProduct');
+        return redirect('/manageproduct');
     }
-    public function updateProduct(){
+    public function updateProduct(Request $request){
+        
+        $image = $request->file('image');
+        $id = $request->id;
 
+        $name = $request->name;
+        $description = $request->description;
+        $price = $request->price;
+        $category_id = $request->category;
+        $imageName = $image->getClientOriginalName();
+        Storage::putFileAs('public/productImage', $image, $image->getClientOriginalName());
+
+        Product::where('id', $id)->first()->update([
+            'name' => $name,
+            'description' => $description,
+            'price' => $price,
+            'category_id' => $category_id,
+            'image' => $imageName
+        ]);
+        return redirect('/manageproduct');
     }
 }

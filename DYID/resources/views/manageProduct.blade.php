@@ -14,6 +14,9 @@
             <div class='page-title'>
                 Manage Product
             </div>
+            <a href="/newproduct" class="btn btn-success">Add Product</a>
+
+            <br><br>
 
             <table>
 

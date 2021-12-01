@@ -46,13 +46,12 @@ class PageController extends Controller
     public function productUpdatePage(Request $request){
         $id = $request->id;
         $selectedProduct = Product::where('id', $id)->first();
-
+        $categories = Category::all();
         $data = [
-            'selectedProduct' => $selectedProduct
+            'selectedProduct' => $selectedProduct,
+            'categories' => $categories
         ];
-
         return view("updateProduct", $data);
-
     }
 
     public function addProductPage(){

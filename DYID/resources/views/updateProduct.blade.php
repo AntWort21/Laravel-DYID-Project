@@ -1,54 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/newproduct.css') }}">
-    <title>Document</title>
-</head>
-<body>
-    @extends('layouts.app')
-    @section('content')
-        <div class="content">
-            <div class="new-product-content-box">
+
+@extends('layouts.app')
+@section('content')
+    <div class="content">
+        <div class="new-product-content-box">
             
-                <form action=""  method="POST">
-                    @csrf
+            <form action="/updateproduct/{{ $selectedProduct->id }}"  method="POST" enctype="multipart/form-data">
+                @csrf
 
-                    <div class="title">
-                        <h2>Update product</h2>    
-                    </div>
+                <div class="d-flex justify-content-center">
+                    <h2>Update Product</h2>  
+                </div> 
+                <br>
 
-                    <div class="inputbox">
-                        <input type="text" name="name" placeholder="Product Name" class="namebox">
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" autocomplete="name"  value="{{ $selectedProduct->name }}" autofocus>
+    
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="inputbox">
-                        <input type="text" name="description" placeholder="Description" class="descriptionbox">
+                </div>
+
+                <div class="form-group row">
+                    <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+    
+                    <div class="col-md-6">
+                        <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" value="{{ $selectedProduct->description }}" autofocus>
+    
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="inputbox">
-                        <input type="text" name="price" placeholder="Price" class="pricebox">
+                </div>
+
+                <div class="form-group row">
+                    <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+    
+                    <div class="col-md-6">
+                        <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" autocomplete="price" value="{{ $selectedProduct->price }}" autofocus>
+    
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="inputbox">
-                        <select name="category" class="categorybox">
-                            <option value="1" selected>Electronics</option>
-                            <option value="2" >Accessories</option>
-                            <option value="3" >Games</option>
+                </div>
+
+                <div class="form-group row">
+                    <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
+    
+                    <div class="col-md-6">
+                        <select class="form-control" name="category" id="category">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
+    
+                        @error('category')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                    <div class="inputbox">
-                        <input type="file" name="image" class="imagebox">
-                    </div>
+                </div>
 
-                    <div class="submit-reset">
-                        <div>
-                            <input class="submitBtn" type="submit" value="Add">
-                        </div>
+                <div class="form-group row">
+                    <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
+    
+                    <div class="col-md-6">
+                        <input id="image" type="file" class="@error('image') is-invalid @enderror" name="image" autocomplete="image" value="{{ $selectedProduct->image }}" autofocus>
+    
+                        @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="form-group row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Update') }}
+                        </button>
+                    </div>
+                </div>
+
+            </form>
         </div>
-    @endsection
-
-</body>
-</html>
+    </div>
+@endsection

@@ -34,7 +34,7 @@ Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']
 Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
 
 //product admin access
-Route::get('/viewproduct', [PageController::class, 'manageProductPage']);
+Route::get('/manageproduct', [PageController::class, 'manageProductPage']);
 Route::get('/updateproduct/{id}', [PageController::class, 'productUpdatePage']);
 Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct']);
 Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
