@@ -93,7 +93,7 @@
                     History Transaction
                 </div>
                 <div class="manage-product">
-                    <a href="/viewproduct">
+                    <a href="/manageproduct">
                         Manage Product
                     </a>
                 </div>

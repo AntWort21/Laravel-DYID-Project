@@ -8,7 +8,7 @@
                 @csrf
 
                 <div class="d-flex justify-content-center">
-                    <h2>Add new product</h2>  
+                    <h2>Add New Product</h2>  
                 </div> 
                 <br>
 

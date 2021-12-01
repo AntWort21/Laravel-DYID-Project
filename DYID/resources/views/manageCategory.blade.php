@@ -14,6 +14,9 @@
             <div class='page-title'>
                 Manage Category
             </div>
+            <a href="/newcategory" class="btn btn-success">Add Category</a>
+
+            <br><br>
 
             <table>
 
@@ -23,13 +26,13 @@
                     <th class="action">Action</th>
                 </tr>
                 @foreach ($categories as $category)
-                    <form action="/deleteproduct/{{ $product->id }}" method="POST">
+                    <form action="/deletecategory/{{ $category->id }}" method="POST">
                         @csrf
                         <tr>
                             <th class="no">{{ $category->id }}</th>
                             <th class="name">{{ $category->name }}</th>
                             <th class="action">
-                                <a href="/updatecategory" class="orange-button">Update</a>
+                                <a href="/updatecategory/{{ $category->id }}" class="orange-button">Update</a>
                                 <button type="submit" class="red-button">Delete</button>
                             </th>
                         </tr>

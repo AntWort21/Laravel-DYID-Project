@@ -31,7 +31,7 @@ class ProductController extends Controller
         $product->image = $image->getClientOriginalName();
         Storage::putFileAs('public/productImage', $image, $image->getClientOriginalName());
         $product->save();
-        return redirect('/mainpage');
+        return redirect('/manageproduct');
     }
 
     public function deleteProduct(Request $request){

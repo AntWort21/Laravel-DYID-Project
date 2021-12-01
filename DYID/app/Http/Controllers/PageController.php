@@ -43,7 +43,7 @@ class PageController extends Controller
         return view('productDetail', $data);
     }
 
-    public function productUpdatePage(Request $request){
+    public function updateProductPage(Request $request){
         $id = $request->id;
         $selectedProduct = Product::where('id', $id)->first();
         $categories = Category::all();
@@ -95,11 +95,16 @@ class PageController extends Controller
         return view('manageCategory', $data);
     }
 
-    public function newCategoryPage(){
+    public function addCategoryPage(){
         return view('newCategory');
     }
 
-    public function updateCategoryPage(){
-        return view('updateCategory');
+    public function updateCategoryPage(Request $request){
+        $id = $request->id;
+        $selectedCategory = Category::where('id', $id)->first();
+        $data = [
+            'selectedCategory' => $selectedCategory
+        ];
+        return view('updateCategory', $data);
     }
 }

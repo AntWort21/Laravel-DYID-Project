@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/newcategory.css') }}">
-    <title>Document</title>
-</head>
-<body>
-    @extends('layouts.app')
-    @section('content')
-        <div class="content">
-            <div class="new-category-content-box">
+
+@extends('layouts.app')
+@section('content')
+    <div class="content">
+        <div class="new-product-content-box">
             
-                <form action=""  method="POST">
-                    @csrf
+            <form action="/updatecategory/{{ $selectedCategory->id }}"  method="POST" enctype="multipart/form-data">
+                @csrf
 
-                    <div class="title">
-                        <h2>Update category</h2>    
-                    </div>
+                <div class="d-flex justify-content-center">
+                    <h2>Update Category</h2>  
+                </div> 
+                <br>
 
-                    <div class="input-box">
-                        <input type="text" name="name" placeholder="Category Name" class="input-name">
+                <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" autocomplete="name" value="{{ $selectedCategory->name }}"autofocus>
+    
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
+                </div>
 
-                    <div class="submit-reset">
-                        <div>
-                            <input class="orange-button" type="submit">
-                        </div>
+                <div class="form-group row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Update') }}
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+
+            </form>
         </div>
-    @endsection
-
-</body>
-</html>
+    </div>
+@endsection

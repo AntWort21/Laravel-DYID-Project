@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -25,17 +26,17 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [PageController::class, 'logoutPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 
-Route::get('/mainpage', [PageController::class, 'mainPage']);
-Route::get('/', [PageController::class, 'mainPage']);
 
 //product user access
-Route::get('/newproduct', [PageController::class, 'addProductPage']);
-Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
+Route::get('/', [PageController::class, 'mainPage']);
+Route::get('/mainpage', [PageController::class, 'mainPage']);
 Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
 
 //product admin access
 Route::get('/manageproduct', [PageController::class, 'manageProductPage']);
-Route::get('/updateproduct/{id}', [PageController::class, 'productUpdatePage']);
+Route::get('/newproduct', [PageController::class, 'addProductPage']);
+Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
+Route::get('/updateproduct/{id}', [PageController::class, 'updateProductPage']);
 Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct']);
 Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
 
@@ -44,10 +45,12 @@ Route::get('/cart', [PageController::class, 'cartPage']);//new
 Route::get('/editcart', [PageController::class, 'editCartPage']);//new
 
 //category
-Route::get('/managecategory', [PageController::class, 'manageCategoryPage']);//new
-Route::get('/newcategory', [PageController::class, 'newCategoryPage']);//new
-Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage']);//new
-Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory']);//new
+Route::get('/managecategory', [PageController::class, 'manageCategoryPage']);
+Route::get('/newcategory', [PageController::class, 'addCategoryPage']);
+Route::post('/newcategory/insertion', [CategoryController::class, 'insertCategory']);
+Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage']);
+Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory']);
+Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
