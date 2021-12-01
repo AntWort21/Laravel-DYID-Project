@@ -98,7 +98,7 @@
                     </a>
                 </div>
                 <div class="manage-category">
-                    <a href="/editcategory">Manage Category</a>
+                    <a href="/managecategory">Manage Category</a>
                 </div>
             </div>
         </div>

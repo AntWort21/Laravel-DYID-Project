@@ -85,8 +85,14 @@ class PageController extends Controller
         return view('manageProduct', $data);
     }
 
-    public function editCategoryPage(){
-        return view('editCategory');
+    public function manageCategoryPage(){
+        $categories = Category::all();
+
+        $data = [
+            'categories' => $categories
+        ];
+
+        return view('manageCategory', $data);
     }
 
     public function newCategoryPage(){

@@ -44,9 +44,10 @@ Route::get('/cart', [PageController::class, 'cartPage']);//new
 Route::get('/editcart', [PageController::class, 'editCartPage']);//new
 
 //category
-Route::get('/editcategory', [PageController::class, 'editCategoryPage']);//new
+Route::get('/managecategory', [PageController::class, 'manageCategoryPage']);//new
 Route::get('/newcategory', [PageController::class, 'newCategoryPage']);//new
-Route::get('/updatecategory', [PageController::class, 'updateCategoryPage']);//new
+Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage']);//new
+Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory']);//new
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');
