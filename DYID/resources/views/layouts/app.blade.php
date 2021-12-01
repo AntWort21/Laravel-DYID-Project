@@ -108,7 +108,7 @@
                         <a href="/cart">My Cart</a>
                     </div>
                     <div class="history-transaction">
-                        History Transaction
+                        <a href="/history">History Transaction</a>
                     </div>
                 @endif
             </div>
