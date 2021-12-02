@@ -50,16 +50,27 @@ class ProductController extends Controller
         $description = $request->description;
         $price = $request->price;
         $category_id = $request->category;
-        $imageName = $image->getClientOriginalName();
-        Storage::putFileAs('public/productImage', $image, $image->getClientOriginalName());
 
-        Product::where('id', $id)->first()->update([
-            'name' => $name,
-            'description' => $description,
-            'price' => $price,
-            'category_id' => $category_id,
-            'image' => $imageName
-        ]);
+        if($image != null){
+            $imageName = $image->getClientOriginalName();
+            Storage::putFileAs('public/productImage', $image, $image->getClientOriginalName());
+
+            Product::where('id', $id)->first()->update([
+                'name' => $name,
+                'description' => $description,
+                'price' => $price,
+                'category_id' => $category_id,
+                'image' => $imageName
+            ]);
+        }
+        else{
+            Product::where('id', $id)->first()->update([
+                'name' => $name,
+                'description' => $description,
+                'price' => $price,
+                'category_id' => $category_id,
+            ]);
+        }
         return redirect('/manageproduct');
     }
 }
