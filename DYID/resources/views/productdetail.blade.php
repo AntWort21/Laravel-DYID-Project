@@ -36,12 +36,11 @@
                     @guest
                         <a href="/login"><button class="orange-button">Login to buy</button></a>
                     @else
-                    <form action="POST" action="/cart/insert/{{ $selectedProduct->id }}">
+                    <form method="POST" action="/cart/insert/{{ $selectedProduct->id }}">
+                        @csrf
                         <label for="Qty">Qty: </label>
                         <input class="quantity" type="text" name="quantity" value="1">
-                        {{-- <a href="/"> --}}
-                            <button class="orange-button" type="submit">Add to Cart</button>
-                        {{-- </a> --}}
+                        <button class="orange-button" type="submit">Add to Cart</button>
                     </form>
                     @endguest
 
