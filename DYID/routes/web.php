@@ -44,7 +44,8 @@ Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
 //cart
 Route::get('/cart', [PageController::class, 'cartPage']);//new
 Route::post('/cart/insert/{id}', [CartController::class, 'insertCart']);//new
-Route::get('/editcart', [PageController::class, 'editCartPage']);//new
+Route::get('/editcart/{id}', [PageController::class, 'editCartPage']);//new
+Route::post('/editcart/{id}', [CartController::class, 'editCart']);
 
 //history
 

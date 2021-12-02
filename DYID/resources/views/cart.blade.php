@@ -28,7 +28,7 @@
                                 <p>{{ $cartDetail->quantity }}</p>
                                 <p>{{ $product->price }}</p>
                                 <div class="button-box">
-                                    <button class="edit-button">Edit</button>
+                                    <a href="/editcart/{{ $cartDetail->product_id }}"><button class="edit-button">Edit</button></a>
                                     <button class="delete-button">Delete</button>
                                 </div>
                                 

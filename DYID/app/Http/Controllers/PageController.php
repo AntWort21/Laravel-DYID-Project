@@ -91,9 +91,19 @@ class PageController extends Controller
         return view('cart', $data);
     }
 
-    public function editCartPage()
+    public function editCartPage(Request $request)
     {
-        return view('editCart');
+        $product_id = $request->id;
+        $user_id = $request->user()->id;
+        $selectedCart = Cart::where('user_id', $user_id)->first();
+        $selectedItem = CartDetail::where('product_id', $product_id)->where('cart_id', $selectedCart->id)->first();
+        $products = Product::all();
+        $data = [
+            'selectedItem' => $selectedItem,
+            'products' => $products
+        ];
+        // dd($selectedItem);
+        return view('editCart', $data);
     }
 
     public function manageProductPage()

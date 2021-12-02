@@ -36,4 +36,19 @@ class CartController extends Controller
 
         return redirect('/');
     }
+
+    public function editCart(Request $request){
+        $product_id = $request->id;
+
+        $user_id = $request->user()->id;
+
+        $selectedCart = Cart::where('user_id', $user_id)->first();
+
+        // dd($product_id, $selectedCart->id);
+        $qty = $request->quantity;
+        CartDetail::where('cart_id', $selectedCart->id)->where('product_id', $product_id)->update([
+            'quantity' => $qty
+        ]);
+        return redirect('/cart');
+    }
 }
