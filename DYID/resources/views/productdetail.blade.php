@@ -12,9 +12,6 @@
     @section('content')
         <div class="content">
             <div class="product-box">
-                <div class="image-box">
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                </div> 
                 <div class="desc-box">
 
                     <img src="../storage/productImage/{{ $selectedProduct->image }}" alt="" class='card-img-top'>
@@ -39,9 +36,13 @@
                     @guest
                         <a href="/login"><button class="orange-button">Login to buy</button></a>
                     @else
+                    <form action="POST" action="/cart/insert/{{ $selectedProduct->id }}">
                         <label for="Qty">Qty: </label>
-                        <input class="quantity" type="text" value="1">
-                        <button class="orange-button">Add to Cart</button>
+                        <input class="quantity" type="text" name="quantity" value="1">
+                        {{-- <a href="/"> --}}
+                            <button class="orange-button" type="submit">Add to Cart</button>
+                        {{-- </a> --}}
+                    </form>
                     @endguest
 
                     <hr>

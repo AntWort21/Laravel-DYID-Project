@@ -31,11 +31,9 @@
                     <hr>
 
                     <div class="quantity-box">
-                        <form action="">
-                            <h3>Quantity : </h3>
-                            <input type="text" class="input-quantity">
-                            <button class="save-button">Save</button>
-                        </form>     
+                        <h3>Quantity : </h3>
+                        <input type="text" class="input-quantity">
+                        <button class="save-button">Save</button>   
                     </div>
 
                 </div>
