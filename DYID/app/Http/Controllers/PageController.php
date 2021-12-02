@@ -72,10 +72,20 @@ class PageController extends Controller
         $selectedCart = Cart::where('user_id', Auth::user()->id)->first();
         $cartDetails = CartDetail::where('cart_id', $selectedCart->id)->get();
         $products = Product::all();
+        $total = 0;
+
+        foreach($cartDetails as $cartDetail ){//calculate total price
+            foreach($products as $product){
+                if($product->id == $cartDetail->product_id){
+                    $total += $product->price;
+                }
+            }
+        }
 
         $data = [
             'cartDetails' => $cartDetails,
-            'products' => $products
+            'products' => $products,
+            'total' => $total
         ];
 
         return view('cart', $data);

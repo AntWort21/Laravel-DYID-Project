@@ -42,7 +42,7 @@
             <h1>Total Price</h1>
 
             <div class=final-info>
-                <p class="final-amount">IDR 50.376.000</p>
+                <p class="final-amount">{{ $total }}</p>
                 <button class="checkout-button">Check Out</button>
             </div>
         </div>
