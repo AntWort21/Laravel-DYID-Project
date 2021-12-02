@@ -16,37 +16,28 @@
                 My Cart
             </div>
 
-            <div class="item-box">
-                <div class="photo-box">
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                </div>
-                <div class="desc-box">
-                    <h2>Acer Swift</h2>
-                    <p>x2 pcs</p>
-                    <p>IDR. 25.188.000</p>
-                    <div class="button-box">
-                        <button class="edit-button">Edit</button>
-                        <button class="delete-button">Delete</button>
-                    </div>
-                    
-                </div>
-            </div>
+            @foreach ($cartDetails as $cartDetail)
+                @foreach ($products as $product)
+                    @if($cartDetail->product_id == $product->id)
+                        <div class="item-box">
+                            <div class="photo-box">
+                                <img src="../storage/productImage/{{ $product->image }}" alt="" class='product-image'>
+                            </div>
+                            <div class="desc-box">
+                                <h2>{{ $product->name }}</h2>
+                                <p>{{ $cartDetail->quantity }}</p>
+                                <p>{{ $product->price }}</p>
+                                <div class="button-box">
+                                    <button class="edit-button">Edit</button>
+                                    <button class="delete-button">Delete</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @endforeach
 
-            <div class="item-box">
-                <div class="photo-box">
-                    <img src="{{ asset('storage/item.jpg') }}" alt="" class='product-image'>
-                </div>
-                <div class="desc-box">
-                    <h2>Acer Swift</h2>
-                    <p class="info-text">x2 pcs</p>
-                    <p class="info-text">IDR. 25.188.000</p>
-                    <div class="button-box">
-                        <button class="edit-button">Edit</button>
-                        <button class="delete-button">Delete</button>
-                    </div>
-                    
-                </div>
-            </div>
 
             <h1>Total Price</h1>
 
