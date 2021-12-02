@@ -102,7 +102,6 @@ class PageController extends Controller
             'selectedItem' => $selectedItem,
             'products' => $products
         ];
-        // dd($selectedItem);
         return view('editCart', $data);
     }
 

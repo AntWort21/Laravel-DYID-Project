@@ -14,6 +14,7 @@
             <div class='page-title'>
                 Manage Product
             </div>
+            {{-- add margin in the add product button --}}
             <a href="/newproduct" class="btn btn-success">Add Product</a>
 
             <br><br>
@@ -44,6 +45,7 @@
                             @endif
                         @endforeach
                         <th class="action">
+                            {{-- change update button size in css --}}
                             <a href="/updateproduct/{{ $product->id }}" class="orange-button">Update</a>
                             <button type="submit" class="red-button" value="Delete">Delete</button>
                         </th>

@@ -19,21 +19,24 @@
             @foreach ($cartDetails as $cartDetail)
                 @foreach ($products as $product)
                     @if($cartDetail->product_id == $product->id)
-                        <div class="item-box">
-                            <div class="photo-box">
-                                <img src="../storage/productImage/{{ $product->image }}" alt="" class='product-image'>
-                            </div>
-                            <div class="desc-box">
-                                <h2>{{ $product->name }}</h2>
-                                <p>{{ $cartDetail->quantity }}</p>
-                                <p>{{ $product->price }}</p>
-                                <div class="button-box">
-                                    <a href="/editcart/{{ $cartDetail->product_id }}"><button class="edit-button">Edit</button></a>
-                                    <button class="delete-button">Delete</button>
+                        <form action="/deletecart/{{ $product->id }}" method="POST">
+                        @csrf
+                            <div class="item-box">
+                                <div class="photo-box">
+                                    <img src="../storage/productImage/{{ $product->image }}" alt="" class='product-image'>
                                 </div>
-                                
+                                <div class="desc-box">
+                                    <h2>{{ $product->name }}</h2>
+                                    <p>{{ $cartDetail->quantity }}</p>
+                                    <p>{{ $product->price }}</p>
+                                    <div class="button-box">
+                                        {{-- change edit button size in css --}}
+                                        <a href="/editcart/{{ $cartDetail->product_id }}" class='edit-button'>Edit</a>
+                                        <button type="submit" class="delete-button">Delete</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     @endif
                 @endforeach
             @endforeach
@@ -43,6 +46,7 @@
 
             <div class=final-info>
                 <p class="final-amount">{{ $total }}</p>
+                {{-- increase checkout button size in css --}}
                 <button class="checkout-button">Check Out</button>
             </div>
         </div>

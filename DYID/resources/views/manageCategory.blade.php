@@ -14,6 +14,7 @@
             <div class='page-title'>
                 Manage Category
             </div>
+            {{-- add margin in the new category button --}}
             <a href="/newcategory" class="btn btn-success">Add Category</a>
 
             <br><br>
@@ -32,6 +33,7 @@
                             <th class="no">{{ $category->id }}</th>
                             <th class="name">{{ $category->name }}</th>
                             <th class="action">
+                                {{-- change update button size in css --}}
                                 <a href="/updatecategory/{{ $category->id }}" class="orange-button">Update</a>
                                 <button type="submit" class="red-button">Delete</button>
                             </th>

@@ -42,10 +42,11 @@ Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct']);
 Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
 
 //cart
-Route::get('/cart', [PageController::class, 'cartPage']);//new
-Route::post('/cart/insert/{id}', [CartController::class, 'insertCart']);//new
-Route::get('/editcart/{id}', [PageController::class, 'editCartPage']);//new
+Route::get('/cart', [PageController::class, 'cartPage']);
+Route::post('/cart/insert/{id}', [CartController::class, 'insertCart']);
+Route::get('/editcart/{id}', [PageController::class, 'editCartPage']);
 Route::post('/editcart/{id}', [CartController::class, 'editCart']);
+Route::post('/deletecart/{id}', [CartController::class, 'deleteCart']);
 
 //history
 
