@@ -36,12 +36,14 @@
                     @guest
                         <a href="/login"><button class="orange-button">Login to buy</button></a>
                     @else
-                    <form method="POST" action="/cart/insert/{{ $selectedProduct->id }}">
-                        @csrf
-                        <label for="Qty">Qty: </label>
-                        <input class="quantity" type="text" name="quantity" value="1">
-                        <button class="orange-button" type="submit">Add to Cart</button>
-                    </form>
+                        @if(Auth::user()->role_id == 2)
+                            <form method="POST" action="/cart/insert/{{ $selectedProduct->id }}">
+                                @csrf
+                                <label for="Qty">Qty: </label>
+                                <input class="quantity" type="text" name="quantity" value="1">
+                                <button class="orange-button" type="submit">Add to Cart</button>
+                            </form>
+                        @endif
                     @endguest
 
                     <hr>

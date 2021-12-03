@@ -86,31 +86,35 @@
                         Home
                     </a>
                 </div>
-                @php
+                {{-- @php
                     $role = 0;    
-                @endphp
-                @if(Auth::check()) {{-- check if user is logged in --}}
-                    @php
+                @endphp --}}
+                {{-- @if(Auth::check()) check if user is logged in --}}
+                    {{-- @php
                         $role = Auth::user()->role_id;
                     @endphp
-                @endif
-                @if ($role == 1)
-                    <div class="manage-product">
-                        <a href="/manageproduct">
-                            Manage Product
-                        </a>
-                    </div>
-                    <div class="manage-category">
-                        <a href="/managecategory">Manage Category</a>
-                    </div>
+                @endif --}}
+                @guest
                 @else
-                    <div class="my-cart">
-                        <a href="/cart">My Cart</a>
-                    </div>
-                    <div class="history-transaction">
-                        <a href="/history">History Transaction</a>
-                    </div>
-                @endif
+                    @if (Auth::user()->role_id == 1)
+                        <div class="manage-product">
+                            <a href="/manageproduct">
+                                Manage Product
+                            </a>
+                        </div>
+                        <div class="manage-category">
+                            <a href="/managecategory">Manage Category</a>
+                        </div>
+                    @else
+                        <div class="my-cart">
+                            <a href="/cart">My Cart</a>
+                        </div>
+                        <div class="history-transaction">
+                            <a href="/history">History Transaction</a>
+                        </div>
+                    @endif
+                @endguest
+                
             </div>
         </div>
 
