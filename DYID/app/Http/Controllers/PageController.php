@@ -77,7 +77,7 @@ class PageController extends Controller
         foreach($cartDetails as $cartDetail ){//calculate total price
             foreach($products as $product){
                 if($product->id == $cartDetail->product_id){
-                    $total += $product->price;
+                    $total += $product->price * $cartDetail->quantity;
                 }
             }
         }
