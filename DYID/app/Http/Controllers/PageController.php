@@ -69,6 +69,13 @@ class PageController extends Controller
 
     public function cartPage()
     {
+        if(Cart::where('user_id',Auth::user()->id)->get()->count() <= 0){//cart doesn't exist
+            $cart = new Cart();
+            $cart->user_id = Auth::user()->id;
+            $cart->status = 0;//unpaid
+            $cart->save();
+        }
+        
         $selectedCart = Cart::where('user_id', Auth::user()->id)->first();
         $cartDetails = CartDetail::where('cart_id', $selectedCart->id)->get();
         $products = Product::all();
