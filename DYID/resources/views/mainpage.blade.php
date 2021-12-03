@@ -22,7 +22,7 @@
                 @endif
                     <div class='big-itembox'>
                         <div class="small-itembox" style="width: 18rem; margin-right: 3rem"> 
-                            <img src="../storage/productImage/{{ $product->image }}" alt="" class='card-img-top'>
+                            <img src="../storage/productImage/{{ $product->image }}" alt="" class='product-image'>
                             <div class='small-textbox'>
                                     <h3>{{ $product->name }}</h3>
                                     <p class='item-description'>{{ $product->description }}</p>

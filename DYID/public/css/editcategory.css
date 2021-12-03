@@ -53,10 +53,16 @@ table{
     background-color: orange;
     border: none;
     border-radius: 4px;
-    padding: 10px 15px;
+    padding: 11px 16px;
     margin-right: 2px;
+    text-decoration: none;
 }
 
 .orange-button:hover{
     background-color: darkorange;
+    text-decoration: none;
+}
+
+.add-box{
+    margin-left: 10px;
 }

@@ -34,8 +34,8 @@
 
                         <form action="/editcart/{{ $selectedItem->product_id }}" method="POST">
                         @csrf
+                        <h3>Quantity : </h3>
                             <div class="quantity-box">
-                                <h3>Quantity : </h3>
                                 <input type="text" class="input-quantity" value="{{ $selectedItem->quantity }}" name="quantity">
                                 <button class="save-button" type="submit">Save</button>   
                             </div>
