@@ -19,7 +19,7 @@ class CartController extends Controller
 
             if(!is_null($inCartDetails)){//item already exist in cart
                 CartDetail::where('cart_id', $cart->id)->where('product_id', $request->id)->update([
-                    'quantity' => $inCartDetails->quantity + 1
+                    'quantity' => $inCartDetails->quantity + $request->quantity
                 ]); 
             }
             else{//item doesn't exist in cart
