@@ -30,7 +30,6 @@
                                     <p>Quantity: {{ $cartDetail->quantity }}x</p>
                                     <p>IDR. {{ $product->price }}</p>
                                     <div class="button-box">
-                                        {{-- change edit button size in css --}}
                                         <a href="/editcart/{{ $cartDetail->product_id }}" class='edit-button'>Edit</a>
                                         <button type="submit" class="delete-button">Delete</button>
                                     </div>
@@ -46,7 +45,6 @@
                 <h1 class="totla-title">Total Price</h1>
                 <div class=final-info>
                     <p class="final-amount">IDR. {{ $total }}</p>
-                    {{-- increase checkout button size in css --}}
                     @if ($total > 0)
                         <button class="checkout-button">Check Out</button>
                     @else
