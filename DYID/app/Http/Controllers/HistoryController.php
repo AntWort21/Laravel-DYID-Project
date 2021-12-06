@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\CartDetail;
 use App\Models\History;
 use App\Models\HistoryDetail;
@@ -13,7 +14,6 @@ class HistoryController extends Controller
     public function insertHistory(Request $request){
         // dd($request->id);
         $cart_id = $request->id;
-        $date = date('Y-m-d H:i:s');
         
         $cartDetails = CartDetail::where('cart_id', $cart_id)->get();
         $products = Product::all();
@@ -22,7 +22,6 @@ class HistoryController extends Controller
         // History::where('user_id',$request->user()->id)->get()->count() <= 0)
         $history = new History();
         $history->user_id = $request->user()->id;
-        $history->date = $date;
         $history->save();
 
         foreach($cartDetails as $cartDetail){
@@ -38,6 +37,10 @@ class HistoryController extends Controller
                 }
             }
         }
+
+        //remove the cart details
+        $selectedCartDetail = CartDetail::where('cart_id', $cart_id);
+        $selectedCartDetail->delete();
 
         return redirect('/history');
 

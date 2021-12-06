@@ -75,7 +75,6 @@ class PageController extends Controller
         if(Cart::where('user_id',Auth::user()->id)->get()->count() <= 0){//cart doesn't exist
             $cart = new Cart();
             $cart->user_id = Auth::user()->id;
-            $cart->status = 0;//unpaid
             $cart->save();
         }
         

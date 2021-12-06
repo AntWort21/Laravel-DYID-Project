@@ -27,8 +27,8 @@
                                 </div>
                                 <div class="desc-box">
                                     <h2>{{ $product->name }}</h2>
-                                    <p>{{ $cartDetail->quantity }}</p>
-                                    <p>{{ $product->price }}</p>
+                                    <p>Quantity: {{ $cartDetail->quantity }}x</p>
+                                    <p>IDR. {{ $product->price }}</p>
                                     <div class="button-box">
                                         {{-- change edit button size in css --}}
                                         <a href="/editcart/{{ $cartDetail->product_id }}" class='edit-button'>Edit</a>
@@ -42,12 +42,16 @@
             @endforeach
 
             <form action="/history/insert/{{ $cart_id }}" method="POST">
-            @csrf
+                @csrf
                 <h1 class="totla-title">Total Price</h1>
                 <div class=final-info>
-                    <p class="final-amount">{{ $total }}</p>
+                    <p class="final-amount">IDR. {{ $total }}</p>
                     {{-- increase checkout button size in css --}}
-                    <button class="checkout-button">Check Out</button>
+                    @if ($total > 0)
+                        <button class="checkout-button">Check Out</button>
+                    @else
+                        <a class="checkout-button">Cart is empty</a>
+                    @endif
                 </div>
             </form>
         </div>
