@@ -38,11 +38,12 @@ class PageController extends Controller
 
     public function productDetailPage(Request $request){
         $id = $request->id;
-
+        $categories = Category::all();
         $selectedProduct = Product::where('id', $id)->first();
 
         $data = [
-            'selectedProduct' => $selectedProduct
+            'selectedProduct' => $selectedProduct,
+            'categories' => $categories
         ];
 
         return view('productDetail', $data);

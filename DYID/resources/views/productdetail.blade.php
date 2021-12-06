@@ -19,7 +19,12 @@
                     <br><br>
 
                     <h2>{{ $selectedProduct->name }}</h2>
-                    <h3>Category: {{ $selectedProduct->category_id }}</h3>
+                    @foreach($categories as $category)
+                        @if ($category->id == $selectedProduct->category_id)
+                            <h3>Category: {{ $category->name }}</h3>
+                        @endif
+                    @endforeach
+                    
 
                     <hr>
 
