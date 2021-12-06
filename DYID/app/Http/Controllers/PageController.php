@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\CartDetail;
 use App\Models\Category;
+use App\Models\History;
+use App\Models\HistoryDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,6 +82,7 @@ class PageController extends Controller
         $cartDetails = CartDetail::where('cart_id', $selectedCart->id)->get();
         $products = Product::all();
         $total = 0;
+        $cart_id = $selectedCart->id;
 
         foreach($cartDetails as $cartDetail ){//calculate total price
             foreach($products as $product){
@@ -92,7 +95,8 @@ class PageController extends Controller
         $data = [
             'cartDetails' => $cartDetails,
             'products' => $products,
-            'total' => $total
+            'total' => $total,
+            'cart_id' => $cart_id
         ];
 
         return view('cart', $data);
@@ -147,7 +151,35 @@ class PageController extends Controller
     }
 
     public function historyPage()
-    {
-        return view('history');
+    {   
+        // dd("halo");
+        if(History::where('user_id',Auth::user()->id)->get()->count() <= 0){//history doesn't exist
+            $checker = 0;
+
+            $data = [
+                'checker' => $checker,
+            ];
+        }
+        else{//history exist
+            $checker = 1;
+            $total = 0;
+            $histories = History::where('user_id', Auth::user()->id)->get();
+            // dd($histories);
+            $historyDetails = HistoryDetail::all();
+            $products = Product::all();
+
+            $data = [
+                'histories' => $histories,
+                'checker' => $checker,
+                'historyDetails'=>$historyDetails,
+                'products' => $products,
+                'total' => $total
+            ];
+        }
+
+        //delete cart_details contents
+
+
+        return view('history', $data);
     }
 }
