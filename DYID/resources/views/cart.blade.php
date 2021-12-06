@@ -43,7 +43,7 @@
 
             <form action="/history/insert/{{ $cart_id }}" method="POST">
             @csrf
-                <h1>Total Price</h1>
+                <h1 class="totla-title">Total Price</h1>
                 <div class=final-info>
                     <p class="final-amount">{{ $total }}</p>
                     {{-- increase checkout button size in css --}}

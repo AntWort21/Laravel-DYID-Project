@@ -19,23 +19,23 @@
                 <p>There is no item in your history</p>
             @else
                 @foreach ($histories as $history)
-                {{ $history->updated_at }}
+                <div class="big-box">
+                    <div class="date-box">
+                        {{ $history->updated_at }}
+                    </div>
                     @foreach ($historyDetails as $historyDetail)
                         @if ($history->id == $historyDetail->history_id)
-                            <div class="big-box">
+
                                 <div class="small-box">
-                                    <div class="date-box">
-                                        {{-- Please insert time stamp here --}}
-                                    </div>
                                     @foreach ($products as $product)
                                         @if ($historyDetail->product_id == $product->id)
                                             <div class="item-box">
                                                 <img class="image" src="../storage/productImage/{{ $product->image }}" alt="">
                                                 <div class="desc-box">
-                                                    <h2>{{ $product->name }}</h2>
-                                                    <p class="p-1">{{ $product->price }}</p>
-                                                    <p class="p-1">{{ $historyDetail->quantity }}</p>
-                                                    <p class="p-2">{{ $product->price * $historyDetail->quantity }}</p>
+                                                    <h2 class="item-name">{{ $product->name }}</h2>
+                                                    <p class="p-1">IDR. {{ $product->price }}</p>
+                                                    <p class="p-1">Quantity : {{ $historyDetail->quantity }}x</p>
+                                                    <p class="p-2">Sub Total : IDR.{{ $product->price * $historyDetail->quantity }}</p>
                                                     @php
                                                         $total += $product->price * $historyDetail->quantity;    
                                                     @endphp
@@ -44,10 +44,11 @@
                                         @endif
                                     @endforeach
                                 </div>
-                            </div>
                         @endif    
                     @endforeach
-                    Total Price: {{ $total }}
+                    <div class="total-box">
+                        Total Price : IDR. {{ $total }}
+                    </div>
                     @php
                         $total = 0;    
                     @endphp
