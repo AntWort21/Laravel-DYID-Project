@@ -43,6 +43,16 @@ class ProductController extends Controller
     }
     public function updateProduct(Request $request){
         
+        $val = Validator::make($request->all(),[
+            'name' => ['required', 'unique:products', 'min:5'],
+            'description' => ['required', 'min:50'],
+            'price' => ['required', 'integer', 'min:1'],
+            'category' => ['required'],
+            'image' => ['image','mimes:jpg']
+        ]);
+
+        $val->validate();
+        
         $image = $request->file('image');
         $id = $request->id;
 

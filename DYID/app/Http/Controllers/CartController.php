@@ -7,10 +7,19 @@ use App\Models\CartDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
     public function insertCart(Request $request){ 
+
+        $val = Validator::make($request->all(),[
+            'quantity' => ['required', 'integer', 'min:1'],
+        ]);
+
+        $val->validate();
+
+
         $cart = Cart::where('user_id',$request->user()->id)->first();
         $inCartDetails = CartDetail::where('cart_id', $cart->id)->where('product_id', $request->id)->first();
 
@@ -31,6 +40,13 @@ class CartController extends Controller
     }
 
     public function editCart(Request $request){
+
+        $val = Validator::make($request->all(),[
+            'quantity' => ['required', 'integer', 'min:1'],
+        ]);
+
+        $val->validate();
+
         $product_id = $request->id;
         $user_id = $request->user()->id;
         $selectedCart = Cart::where('user_id', $user_id)->first();

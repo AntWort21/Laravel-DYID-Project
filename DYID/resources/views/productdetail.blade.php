@@ -45,8 +45,14 @@
                             <form method="POST" action="/cart/insert/{{ $selectedProduct->id }}">
                                 @csrf
                                 <label for="Qty">Qty: </label>
-                                <input class="quantity" type="text" name="quantity" value="1">
+                                <input class="quantity @error('quantity') is-invalid @enderror" type="text" name="quantity" value="1">
                                 <button class="orange-button" type="submit">Add to Cart</button>
+                                
+                                @error('quantity')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </form>
                         @endif
                     @endguest

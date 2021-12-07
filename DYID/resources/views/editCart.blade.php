@@ -36,8 +36,13 @@
                         @csrf
                         <h3>Quantity : </h3>
                             <div class="quantity-box">
-                                <input type="text" class="input-quantity" value="{{ $selectedItem->quantity }}" name="quantity">
-                                <button class="save-button" type="submit">Save</button>   
+                                <input type="text" class="input-quantity @error('quantity') is-invalid @enderror" value="{{ $selectedItem->quantity }}" name="quantity">
+                                <button class="save-button" type="submit">Save</button>  
+                                @error('quantity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </form>
 

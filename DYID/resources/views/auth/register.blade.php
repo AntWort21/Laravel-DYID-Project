@@ -94,7 +94,7 @@
                             <label for="terms-and-services" class="col-md-4 col-form-label text-md-right">{{ __('Terms-and-services') }}</label>
 
                             <div class="col-md-6">
-                                <input id="terms-and-services" type="checkbox" class="@error('terms-and-services') is-invalid @enderror" name="terms-and-services" value="2" required autocomplete="terms-and-services" autofocus>
+                                <input id="terms-and-services" type="checkbox" class="@error('terms-and-services') is-invalid @enderror" name="terms-and-services" required autocomplete="terms-and-services" autofocus>
 
                                 @error('terms-and-services')
                                     <span class="invalid-feedback" role="alert">
