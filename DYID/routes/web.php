@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -64,6 +65,10 @@ Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory'
 Route::get('/history', [PageController::class, 'historyPage']);
 Route::post('/history/insert/{id}', [HistoryController::class, 'insertHistory']);
 // Route::post(/history);
+
+
+//searchbar
+Route::get('/searchitem', [PageController::class, 'searchItem']);
 
 // Route::resource('/user', UserController::class);
 // Route::post('/register', [MemberController::class, 'registerRequest'])->name('registerRequest');

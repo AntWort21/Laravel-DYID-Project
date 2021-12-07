@@ -48,7 +48,7 @@
                     @if ($total > 0)
                         <button class="checkout-button">Check Out</button>
                     @else
-                        <a class="checkout-button">Cart is empty</a>
+                        <button class="checkout-button" disabled>Check Out</button>
                     @endif
                 </div>
             </form>

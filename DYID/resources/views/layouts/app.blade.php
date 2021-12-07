@@ -38,7 +38,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <form action="/searchitem" method="GET">
+                            <input type="text" class="search-box" name="searchvalue">
+                            <input type="submit" class="search-submit" value=" ">
+                        </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

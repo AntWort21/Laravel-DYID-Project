@@ -36,6 +36,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function searchItem(Request $request){
+        $searchedProducts = Product::where('name', 'like', "%$request->searchvalue%")->paginate(6);
+
+        return view('mainPage', [
+            'products' => $searchedProducts
+        ]);
+    }
+
     public function productDetailPage(Request $request){
         $id = $request->id;
         $categories = Category::all();
