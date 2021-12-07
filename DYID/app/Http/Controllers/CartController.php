@@ -13,6 +13,12 @@ class CartController extends Controller
 {
     public function insertCart(Request $request){ 
 
+        if(Cart::where('user_id',$request->user()->id)->get()->count() <= 0){//cart doesn't exist
+            $cart = new Cart();
+            $cart->user_id = $request->user()->id;
+            $cart->save();
+        }
+
         $val = Validator::make($request->all(),[
             'quantity' => ['required', 'integer', 'min:1'],
         ]);
