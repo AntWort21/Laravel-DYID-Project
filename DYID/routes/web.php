@@ -25,45 +25,43 @@ use App\Http\Controllers\PageController;
 Route::get('/login', [PageController::class, 'loginPage']);
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/logout', [PageController::class, 'logoutPage']);
+Route::get('/logout', [PageController::class, 'logoutPage'])->middleware('auth');
 Route::get('/register', [PageController::class, 'registerPage']);
 Route::post('/register/insertion', [RegisterController::class, 'insert']);
 
 
-//product user access
+//guest access
 Route::get('/', [PageController::class, 'mainPage']);
 Route::get('/mainpage', [PageController::class, 'mainPage']);
 Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
 
 //product admin access
-Route::get('/manageproduct', [PageController::class, 'manageProductPage']);
-Route::get('/newproduct', [PageController::class, 'addProductPage']);
-Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct']);
-Route::get('/updateproduct/{id}', [PageController::class, 'updateProductPage']);
-Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct']);
-Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct']);
+Route::get('/manageproduct', [PageController::class, 'manageProductPage'])->middleware('auth');
+Route::get('/newproduct', [PageController::class, 'addProductPage'])->middleware('auth');
+Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct'])->middleware('auth');
+Route::get('/updateproduct/{id}', [PageController::class, 'updateProductPage'])->middleware('auth');
+Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct'])->middleware('auth');
+Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct'])->middleware('auth');
 
 //cart
-Route::get('/cart', [PageController::class, 'cartPage']);
-Route::post('/cart/insert/{id}', [CartController::class, 'insertCart']);
-Route::get('/editcart/{id}', [PageController::class, 'editCartPage']);
-Route::post('/editcart/{id}', [CartController::class, 'editCart']);
-Route::post('/deletecart/{id}', [CartController::class, 'deleteCart']);
-
-//history
+Route::get('/cart', [PageController::class, 'cartPage'])->middleware('auth');
+Route::post('/cart/insert/{id}', [CartController::class, 'insertCart'])->middleware('auth');
+Route::get('/editcart/{id}', [PageController::class, 'editCartPage'])->middleware('auth');
+Route::post('/editcart/{id}', [CartController::class, 'editCart'])->middleware('auth');
+Route::post('/deletecart/{id}', [CartController::class, 'deleteCart'])->middleware('auth');
 
 
 //category
-Route::get('/managecategory', [PageController::class, 'manageCategoryPage']);
-Route::get('/newcategory', [PageController::class, 'addCategoryPage']);
-Route::post('/newcategory/insertion', [CategoryController::class, 'insertCategory']);
-Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage']);
-Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory']);
-Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory']);
+Route::get('/managecategory', [PageController::class, 'manageCategoryPage'])->middleware('auth');
+Route::get('/newcategory', [PageController::class, 'addCategoryPage'])->middleware('auth');
+Route::post('/newcategory/insertion', [CategoryController::class, 'insertCategory'])->middleware('auth');
+Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage'])->middleware('auth');
+Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory'])->middleware('auth');
+Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory'])->middleware('auth');
 
 //history
-Route::get('/history', [PageController::class, 'historyPage']);
-Route::post('/history/insert/{id}', [HistoryController::class, 'insertHistory']);
+Route::get('/history', [PageController::class, 'historyPage'])->middleware('auth');
+Route::post('/history/insert/{id}', [HistoryController::class, 'insertHistory'])->middleware('auth');
 // Route::post(/history);
 
 
