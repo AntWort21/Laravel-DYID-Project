@@ -56,8 +56,15 @@ class LoginController extends Controller
     {
        if($request->get('remember')){
             $time = 300;
-            $getToken = Auth::getRecallerName();
-            Cookie::queue($getToken, Cookie::get($getToken), $time);
+            Cookie::queue("emailCookie", $request->email, $time);
+            Cookie::queue("passwordCookie", $request->password, $time);
+            // $getToken = Auth::getRecallerName();
+            // Cookie::queue($getToken, Cookie::get($getToken), $time);
+            // $value = [
+            //     'email' => $request->email,
+            //     'password' => $request->password,
+            // ];
+            // Cookie::queue("myCookie", $value, $time);
        }
         
         $request->session()->regenerate();
@@ -83,11 +90,12 @@ class LoginController extends Controller
             return $response;
         }
         
-        $rememberMeCookie = Auth::getRecallerName();
-        $cookieName = Cookie::forget($rememberMeCookie);
+        // $rememberMeCookie = Auth::getRecallerName();
+        // $cookieName = Cookie::forget($rememberMeCookie);
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
-            : redirect('/')->withCookie($cookieName);
+            : redirect('/');
+            // : redirect('/')->withCookie($cookieName);
     }
 }

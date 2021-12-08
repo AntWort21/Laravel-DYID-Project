@@ -36,32 +36,32 @@ Route::get('/mainpage', [PageController::class, 'mainPage']);
 Route::get('/productdetail/{id}', [PageController::class, 'productDetailPage']);
 
 //product admin access
-Route::get('/manageproduct', [PageController::class, 'manageProductPage'])->middleware('auth');
-Route::get('/newproduct', [PageController::class, 'addProductPage'])->middleware('auth');
-Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct'])->middleware('auth');
-Route::get('/updateproduct/{id}', [PageController::class, 'updateProductPage'])->middleware('auth');
-Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct'])->middleware('auth');
-Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct'])->middleware('auth');
+Route::get('/manageproduct', [PageController::class, 'manageProductPage'])->middleware('admin');
+Route::get('/newproduct', [PageController::class, 'addProductPage'])->middleware('admin');
+Route::post('/newproduct/insertion', [ProductController::class, 'insertProduct'])->middleware('admin');
+Route::get('/updateproduct/{id}', [PageController::class, 'updateProductPage'])->middleware('admin');
+Route::post('/updateproduct/{id}', [ProductController::class, 'updateProduct'])->middleware('admin');
+Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteProduct'])->middleware('admin');
 
 //cart
-Route::get('/cart', [PageController::class, 'cartPage'])->middleware('auth');
-Route::post('/cart/insert/{id}', [CartController::class, 'insertCart'])->middleware('auth');
-Route::get('/editcart/{id}', [PageController::class, 'editCartPage'])->middleware('auth');
-Route::post('/editcart/{id}', [CartController::class, 'editCart'])->middleware('auth');
-Route::post('/deletecart/{id}', [CartController::class, 'deleteCart'])->middleware('auth');
+Route::get('/cart', [PageController::class, 'cartPage'])->middleware('member');
+Route::post('/cart/insert/{id}', [CartController::class, 'insertCart'])->middleware('member');
+Route::get('/editcart/{id}', [PageController::class, 'editCartPage'])->middleware('member');
+Route::post('/editcart/{id}', [CartController::class, 'editCart'])->middleware('member');
+Route::post('/deletecart/{id}', [CartController::class, 'deleteCart'])->middleware('member');
 
 
 //category
-Route::get('/managecategory', [PageController::class, 'manageCategoryPage'])->middleware('auth');
-Route::get('/newcategory', [PageController::class, 'addCategoryPage'])->middleware('auth');
-Route::post('/newcategory/insertion', [CategoryController::class, 'insertCategory'])->middleware('auth');
-Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage'])->middleware('auth');
-Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory'])->middleware('auth');
-Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory'])->middleware('auth');
+Route::get('/managecategory', [PageController::class, 'manageCategoryPage'])->middleware('admin');
+Route::get('/newcategory', [PageController::class, 'addCategoryPage'])->middleware('admin');
+Route::post('/newcategory/insertion', [CategoryController::class, 'insertCategory'])->middleware('admin');
+Route::get('/updatecategory/{id}', [PageController::class, 'updateCategoryPage'])->middleware('admin');
+Route::post('/updatecategory/{id}', [CategoryController::class, 'updateCategory'])->middleware('admin');
+Route::post('/deletecategory/{id}', [CategoryController::class, 'deleteCategory'])->middleware('admin');
 
 //history
-Route::get('/history', [PageController::class, 'historyPage'])->middleware('auth');
-Route::post('/history/insert/{id}', [HistoryController::class, 'insertHistory'])->middleware('auth');
+Route::get('/history', [PageController::class, 'historyPage'])->middleware('member');
+Route::post('/history/insert/{id}', [HistoryController::class, 'insertHistory'])->middleware('member');
 // Route::post(/history);
 
 
