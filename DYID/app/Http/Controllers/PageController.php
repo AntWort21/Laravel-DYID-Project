@@ -37,7 +37,7 @@ class PageController extends Controller
     }
 
     public function searchItem(Request $request){
-        $searchedProducts = Product::where('name', 'like', "%$request->searchvalue%")->paginate(6);
+        $searchedProducts = Product::where('name', $request->searchvalue)->paginate(6);
 
         return view('mainPage', [
             'products' => $searchedProducts
