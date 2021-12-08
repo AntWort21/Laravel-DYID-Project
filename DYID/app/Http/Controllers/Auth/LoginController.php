@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class LoginController extends Controller
 {
@@ -41,11 +43,50 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function validator(array $data)
+    protected function sendLoginResponse(Request $request)
     {
-        return Validator::make($data, [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required'],
+       if($request->get('remember')){
+            $time = 300;
+            $getToken = Auth::getRecallerName();
+            Cookie::queue($getToken, Cookie::get($getToken), $time);
+       }
+        
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    : redirect()->intended($this->redirectPath());
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+        
+        $cookieForRememberMe = Auth::getRecallerName();
+        $cookieName = Cookie::forget($cookieForRememberMe);
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/')->withCookie($cookieName);
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
         ]);
     }
 }

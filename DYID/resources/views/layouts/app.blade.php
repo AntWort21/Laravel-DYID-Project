@@ -89,14 +89,6 @@
                         Home
                     </a>
                 </div>
-                {{-- @php
-                    $role = 0;    
-                @endphp --}}
-                {{-- @if(Auth::check()) check if user is logged in --}}
-                    {{-- @php
-                        $role = Auth::user()->role_id;
-                    @endphp
-                @endif --}}
                 @guest
                 @else
                     @if (Auth::user()->role_id == 1)
