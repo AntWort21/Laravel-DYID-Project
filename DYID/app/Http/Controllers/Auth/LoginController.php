@@ -44,6 +44,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+    }
+
     protected function sendLoginResponse(Request $request)
     {
        if($request->get('remember')){
@@ -81,13 +89,5 @@ class LoginController extends Controller
         return $request->wantsJson()
             ? new JsonResponse([], 204)
             : redirect('/')->withCookie($cookieName);
-    }
-
-    protected function validateLogin(Request $request)
-    {
-        $request->validate([
-            $this->username() => 'required|string|email',
-            'password' => 'required|string',
-        ]);
     }
 }
