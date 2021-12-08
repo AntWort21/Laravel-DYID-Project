@@ -83,8 +83,8 @@ class LoginController extends Controller
             return $response;
         }
         
-        $cookieForRememberMe = Auth::getRecallerName();
-        $cookieName = Cookie::forget($cookieForRememberMe);
+        $rememberMeCookie = Auth::getRecallerName();
+        $cookieName = Cookie::forget($rememberMeCookie);
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
