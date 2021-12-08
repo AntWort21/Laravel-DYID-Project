@@ -58,8 +58,6 @@ class LoginController extends Controller
             $time = 300;
             Cookie::queue("emailCookie", $request->email, $time);
             Cookie::queue("passwordCookie", $request->password, $time);
-            // $getToken = Auth::getRecallerName();
-            // Cookie::queue($getToken, Cookie::get($getToken), $time);
             // $value = [
             //     'email' => $request->email,
             //     'password' => $request->password,
