@@ -14,9 +14,9 @@
             <div class='page-title'>
                 Manage Category
             </div>
-            <div class="add-box">
+            {{-- <div class="add-box">
                 <a href="/newcategory" class="btn btn-success">Add Category</a>
-            </div>
+            </div> --}}
             
 
             <br><br>

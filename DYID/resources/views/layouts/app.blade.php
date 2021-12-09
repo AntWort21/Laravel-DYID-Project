@@ -85,27 +85,48 @@
         <div class="header-lower">
             <div class="nav-bar">
                 <div class="home">
-                    <a href="/mainpage">
+                    <a class="nav-link" href="/mainpage">
                         Home
                     </a>
                 </div>
                 @guest
                 @else
                     @if (Auth::user()->role_id == 1)
+
                         <div class="manage-product">
-                            <a href="/manageproduct">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Manage Product
                             </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/manageproduct">
+                                    View Product
+                                </a>
+                                <a class="dropdown-item" href="/newproduct">
+                                    Add Product
+                                </a>
+                            </div>
                         </div>
                         <div class="manage-category">
-                            <a href="/managecategory">Manage Category</a>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Manage Category
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/managecategory">
+                                    View Category
+                                </a>
+                                <a class="dropdown-item" href="/newcategory">
+                                    Add Category
+                                </a>
+                            </div>
                         </div>
                     @else
                         <div class="my-cart">
-                            <a href="/cart">My Cart</a>
+                            <a class="nav-link" href="/cart">My Cart</a>
                         </div>
                         <div class="history-transaction">
-                            <a href="/history">History Transaction</a>
+                            <a class="nav-link" href="/history">History Transaction</a>
                         </div>
                     @endif
                 @endguest

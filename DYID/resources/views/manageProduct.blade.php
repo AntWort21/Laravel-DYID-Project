@@ -14,9 +14,9 @@
             <div class='page-title'>
                 Manage Product
             </div>
-            <div class="add-box">
+            {{-- <div class="add-box">
                 <a href="/newproduct" class="btn btn-success">Add Product</a>
-            </div>
+            </div> --}}
 
             <br><br>
 
