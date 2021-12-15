@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    public function cartDetail(){
+        return $this->hasMany(CartDetail::class, 'genderId');
+    }
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
 }

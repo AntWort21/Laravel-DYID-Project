@@ -16,10 +16,15 @@ class Product extends Model
         'category_id'
     ];
 
-    // $table->increments('productId');
-    //         $table->string('productName');
-    //         $table->string('productDescription');
-    //         $table->integer('productPrice');
-    //         $table->string('productImage');
-    // 
+    public function historyDetail(){
+        return $this->hasMany(historyDetail::class, 'product_id');
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    public function cartDetails(){
+        return $this->hasMany(CartDetail::class, 'product_id');
+    }
 }

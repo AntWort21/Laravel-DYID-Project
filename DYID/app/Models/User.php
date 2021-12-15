@@ -26,6 +26,22 @@ class User extends Authenticatable
         'role_id'
     ];
 
+    public function gender(){
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+    public function history(){
+        return $this->hasMany(History::class, 'user_id');
+    }
+
+    public function cart(){
+        return $this->hasOne(Cart::class, 'user_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
