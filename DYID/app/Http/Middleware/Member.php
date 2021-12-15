@@ -17,7 +17,10 @@ class Member
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->role_id != 2){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+        else if(Auth::user()->role_id != 2){
             return abort(401);
         }
         return $next($request);
